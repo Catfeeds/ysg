@@ -12,6 +12,7 @@ namespace app\admin\controller;
 
 use app\admin\Controller;
 use think\Db;
+use think\Config;
 
 class Upload extends Controller
 {
@@ -28,7 +29,30 @@ class Upload extends Controller
      */
     public function upload()
     {
-        $file = $this->request->file('file');
+        // 改为7牛上传
+        $upload = \Qiniu::instance();
+        $info = $upload->upload('image/');
+        $error = $upload->getError();
+        $domain = Config::get('qiniu.domain');
+
+        if (!empty($error)) {
+            return ajax_return_error($error);
+        } else {
+            $insert = [
+                'cate'     => 3,
+                'name'     => $info[0]['key'],
+                'original' => $info[0]['name'],
+                'domain'   => $domain,
+                'type'     => $info[0]['type'],
+                'size'     => $info[0]['size'],
+                'mtime'    => time(),
+            ];
+            Db::name('File')->insert($insert);
+        }
+
+        return ajax_return(['name' => $domain . $info[0]['key']]);
+
+        /*$file = $this->request->file('file');
         $path = ROOT_PATH . 'public/tmp/uploads/';
         $info = $file->move($path);
         if (!$info) {
@@ -46,7 +70,7 @@ class Upload extends Controller
         ];
         Db::name('File')->insert($insert);
 
-        return ajax_return(['name' => $data]);
+        return ajax_return(['name' => $data]);*/
     }
 
     /**

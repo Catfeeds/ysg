@@ -29,7 +29,7 @@ class Index extends Controller
 
         // 节点转为树
         $tree_node = list_to_tree($nodes);
-
+//dump($tree_node);exit;
         // 显示菜单项
         $menu = [];
         $groups_id = [];
