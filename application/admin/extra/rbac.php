@@ -10,7 +10,7 @@
 
 return [
     // RBAC 权限验证
-    'user_auth_on'            => true, // 是否开启认证
+    'user_auth_on'            => false, // 是否开启认证
     'user_auth_type'          => 2, // 默认认证类型 1 - 登录认证 | 2 - 实时认证
     'user_auth_key'           => 'auth_id',    // 用户认证 SESSION 标记
     'admin_auth_key'          => 'administrator',
