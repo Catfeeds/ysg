@@ -13,5 +13,4 @@ class Config extends Controller
 
     protected static $isdelete = false;
 
-    
 }
