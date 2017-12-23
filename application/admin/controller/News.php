@@ -12,6 +12,16 @@ class News extends Controller
     // 方法黑名单
     protected static $blacklist = [];
 
+    public function __construct()
+    {
+        parent::__construct();
+        $menus = model('menu')->getMenu();
+        $menusArr = array_column($menus, 'name', 'id');
+        $this->view->assign('menus', $menus);
+        $this->view->assign('menusArr', $menusArr);
+    }
+
+
     protected function filter(&$map)
     {
         if ($this->request->param("title")) {

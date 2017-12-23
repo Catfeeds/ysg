@@ -28,42 +28,54 @@
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>网站Logo：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="网站Logo" name="logo" value="{$vo.logo ?? ''}"  datatype="*" nullmsg="logo不能为空">
+                <input type="text" class="input-text" name="logo" id="upload" placeholder="请点击后面的上传按钮" value="{$vo.logo ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
+                {$vo.logo ? prevImage($vo.logo) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">顶部banner：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="顶部banner" name="top_image" value="{$vo.top_image ?? ''}" >
+                <input type="text" class="input-text" name="top_image" id="top_image" placeholder="请点击后面的上传按钮" value="{$vo.top_image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'top_image\'])}')">上传</button>
+                {$vo.top_image ? prevImage($vo.top_image) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">手机图片：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="手机图片" name="mobile_image" value="{$vo.mobile_image ?? ''}" >
+                <input type="text" class="input-text" name="mobile_image" id="mobile_image" placeholder="请点击后面的上传按钮" value="{$vo.mobile_image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'mobile_image\'])}')">上传</button>
+                {$vo.mobile_image ? prevImage($vo.mobile_image) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">底部logo：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="底部logo" name="footer_logo" value="{$vo.footer_logo ?? ''}" >
+                <input type="text" class="input-text" name="footer_logo" id="footer_logo" placeholder="请点击后面的上传按钮" value="{$vo.footer_logo ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'footer_logo\'])}')">上传</button>
+                {$vo.footer_logo ? prevImage($vo.footer_logo) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">底部手机图片：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="底部手机图片" name="footer_mobile" value="{$vo.footer_mobile ?? ''}" >
+                <input type="text" class="input-text" name="footer_mobile" id="footer_mobile" placeholder="请点击后面的上传按钮" value="{$vo.footer_mobile ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'footer_mobile\'])}')">上传</button>
+                {$vo.footer_mobile ? prevImage($vo.footer_mobile) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3">二维码：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" placeholder="二维码" name="qrcode" value="{$vo.qrcode ?? ''}" >
+                <input type="text" class="input-text" name="qrcode" id="qrcode" placeholder="请点击后面的上传按钮" value="{$vo.qrcode ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'qrcode\'])}')">上传</button>
+                {$vo.qrcode ? prevImage($vo.qrcode) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>

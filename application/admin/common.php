@@ -148,6 +148,56 @@ function get_status($status, $imageShow = true)
 }
 
 /**
+ * 状态图标显示
+ * @param $enabled
+ * @param bool $imageShow
+ * @return string
+ */
+function get_enabled($enabled, $imageShow = false)
+{
+    switch ($enabled) {
+        case 'N' :
+            $showText = '<a href="javascript:;" class="btn btn-danger">隐藏</a>';
+            $showImg = '<i class="Hui-iconfont c-success status" title="隐藏">&#xe615;</i>';
+            break;
+        default :
+            $showText = '<a href="javascript:;" class="btn btn-primary">显示</a>';
+            $showImg = '<i class="Hui-iconfont c-warning status" title="显示">&#xe631;</i>';
+    }
+
+    return ($imageShow === true) ? $showImg : $showText;
+}
+
+function get_enum_status($enabled, $imageShow = false)
+{
+    switch ($enabled) {
+        case 'N' :
+            $showText = '<a href="javascript:;" class="btn btn-info">否</a>';
+            $showImg = '<i class="Hui-iconfont c-warning status" title="否">&#xe631;</i>';
+            break;
+        default :
+            $showText = '<a href="javascript:;" class="btn btn-primary">是</a>';
+            $showImg = '<i class="Hui-iconfont c-success status" title="是">&#xe615;</i>';
+
+    }
+
+    return ($imageShow === true) ? $showImg : $showText;
+}
+
+/**
+ * 图片预览
+ * @param $image
+ * @return string
+ */
+function prev_image($image)
+{
+    $image = $image ?: 'http://7j1y9l.com1.z0.glb.clouddn.com/image/jb96l2n4_4umlnvc3maec5a34f0e49be03.png';
+    $html = '<a href="'.$image.'" target="_blank"><img src="'.$image.'" style="width:50px;height: 30px" /></a>';
+
+    return $html;
+}
+
+/**
  * 框架内部默认ajax返回
  * @param string $msg      提示信息
  * @param string $redirect 重定向类型 current|parent|''

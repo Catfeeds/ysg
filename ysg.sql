@@ -206,7 +206,7 @@ create table tp_company_service(
 )engine = innodb default charset=utf8 comment = '营销服务图片';
 
 
-create table tp_topic(
+create table tp_menu_topic(
     id int not null primary key auto_increment,
     menu_id int not null default '0' comment '关联菜单ID',
     content text not null comment '内容',

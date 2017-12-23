@@ -38,6 +38,13 @@ function export_excel($header, $body, $name = null, $version = '2007')
     return \Excel::export($header, $body, $name, $version);
 }
 
+function prevImage($image)
+{
+    $image = $image ?: 'http://7j1y9l.com1.z0.glb.clouddn.com/image/jb96l2n4_4umlnvc3maec5a34f0e49be03.png';
+    $html = '<a href="'.$image.'" target="_blank"><img src="'.$image.'" style="width:50px;height: 30px" /></a>';
+
+    return $html;
+}
 /**
  * 获取七牛上传token
  * @return mixed

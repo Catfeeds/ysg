@@ -11,6 +11,20 @@
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>分类：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <div class="select-box">
+                    <select name="category_id" class="select">
+                        <option value="">请选择分类</option>
+                        {foreach $menus as $item}
+                        <option value="{$item.id}">{$item.name}</option>
+                        {/foreach}
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>来源：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" placeholder="来源" name="author" value="{$vo.author ?? '官网'}"  datatype="*" nullmsg="请填写来源" errormsg="来源不能为空">
@@ -23,13 +37,14 @@
                 <input type="text" class="input-text" name="image" id="upload" placeholder="请点击后面的上传按钮" value="{$vo.image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
                 <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
                 <a onclick="window.open($('#upload').val())" type="button" class="btn btn-success radius" data-lightbox="preview">预览</a>
+                <!--{$vo.image|prevImage}-->
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>内容：</label>
             <div class="formControls col-xs-6 col-sm-8">
-                <script id="editor" type="text/plain" style="height:400px">{$vo.content|htmlspecialchars_decode}</script>
+                <script id="editor" type="text/plain" style="height:400px">{$vo.content ? htmlspecialchars_decode($vo.content) : ''}</script>
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -52,7 +67,8 @@
 <script type="text/javascript" src="__LIB__/Validform/5.3.2/Validform.min.js"></script>
 <script>
     $(function () {
-
+        var categoryId = "{$vo.category_id ?? 0}";
+        $("[name='category_id']").find("[value='"+ categoryId +"']").attr("selected", true);
 
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',
