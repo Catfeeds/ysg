@@ -10,7 +10,8 @@
             共有数据 ：<strong>{$count ?? '0'}</strong> 条
         </span>
     </div>
-    <table class="table table-border table-bordered table-hover table-bg mt-20">
+    <div style="" class="table-responsive">
+    <table class="table table-border table-bordered table-hover table-bg mt-20 table-responsive">
         <thead>
         <tr class="text-c">
             <th width="25"><input type="checkbox"></th>
@@ -18,6 +19,7 @@
             <th width="">关键字</th>
             <th width="">网站描述</th>
             <th width="">网站Logo</th>
+            <th width="">网站标语</th>
             <th width="">顶部banner</th>
             <th width="">手机图片</th>
             <th width="">底部logo</th>
@@ -39,6 +41,7 @@
             <td>{$vo.keyword}</td>
             <td>{$vo.description|mb_substr=###,0,30,'utf-8'}</td>
             <td>{$vo.logo|prev_image}</td>
+            <td>{$vo.slogan|prev_image}</td>
             <td>{$vo.top_image|prev_image}</td>
             <td>{$vo.mobile_image|prev_image}</td>
             <td>{$vo.footer_logo|prev_image}</td>
@@ -56,6 +59,7 @@
         {/volist}
         </tbody>
     </table>
+    </div>
     <div class="page-bootstrap">{$page ?? ''}</div>
 </div>
 {/block}

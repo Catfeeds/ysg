@@ -37,7 +37,6 @@
                 <input type="text" class="input-text" name="image" id="upload" placeholder="请点击后面的上传按钮" value="{$vo.image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
                 <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
                 <a onclick="window.open($('#upload').val())" type="button" class="btn btn-success radius" data-lightbox="preview">预览</a>
-                <!--{$vo.image|prevImage}-->
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
