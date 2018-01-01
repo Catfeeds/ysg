@@ -192,7 +192,7 @@ function get_enum_status($enabled, $imageShow = false)
 function prev_image($image)
 {
     $image = $image ?: 'http://7j1y9l.com1.z0.glb.clouddn.com/image/jb96l2n4_4umlnvc3maec5a34f0e49be03.png';
-    $html = '<a href="'.$image.'" target="_blank"><img src="'.$image.'" style="width:50px;height: 30px" /></a>';
+    $html = '<a href="'.$image.'" target="_blank"><img src="'.$image.'" style="width:50px;height: 30px" title="预览" /></a>';
 
     return $html;
 }

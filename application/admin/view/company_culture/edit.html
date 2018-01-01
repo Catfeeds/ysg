@@ -4,7 +4,7 @@
     <form class="form form-horizontal" id="form" method="post" action="{:\\think\\Request::instance()->baseUrl()}">
         <input type="hidden" name="id" value="{$vo.id ?? ''}">
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>图片地址：</label>
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>图片地址(234 * 150)：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" name="image" id="image" placeholder="请点击后面的上传按钮" value="{$vo.image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
                 <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'image\'])}')">上传</button>

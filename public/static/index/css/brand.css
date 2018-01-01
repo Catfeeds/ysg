@@ -1,0 +1,53 @@
+.nava ul { padding:7px 0 0 355px; height:33px;}
+.weizhi{ height:42px;  line-height:42px; color:#666; width:980px; margin:0 auto; text-align:left;}
+.weizhi a{ color:#666;}
+
+
+.flexslider{position:relative; width:980px; height:400px;overflow:hidden;background:url("../images/loading.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/loading.gif*/ 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:400px;}
+.slides li a{ display:block; width:980px; height:400px;}
+.slides li img{ width:980px; height:400px;}
+.flex-control-nav{position:absolute; left:50%; bottom:20px; margin-left:-44px; z-index:999;}
+.flex-control-nav li{ float:left; width:16px;height:16px; margin-right:6px; display:inline;zoom:1; text-indent:-9999px; cursor:pointer;}
+.flex-control-nav a{ display:block; width:16px; height:16px; background:url("../images/dian.png")/*tpa=http://www.ysg.cn/templets/ysg/images/dian.png*/ no-repeat;  }
+.flex-control-nav .flex-active{  background:url("../images/dian.png")/*tpa=http://www.ysg.cn/templets/ysg/images/dian.png*/ no-repeat 0 -16px;}
+
+
+.huodong_bt1{ background:url("../images/pinpaihuodong/huodong_bt1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaihuodong/huodong_bt1.jpg*/ no-repeat center center; text-indent:-9999px; height:80px; margin-top:10px;}
+.huodong_bt2{ background:url("../images/pinpaihuodong/huodong_bt2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaihuodong/huodong_bt2.jpg*/ no-repeat center center; text-indent:-9999px; height:80px; margin-top:10px;}
+
+.huodong_list{ width:980px; background-color:#fff; overflow:hidden;}
+.huodong_list ul{ width:990px; padding:20px 0 0 10px;}
+.huodong_list ul li{ width:200px; height:267px; padding:12px 19px 28px 19px; float:left; margin:0 4px 7px 0; background:url("../images/pinpaihuodong/huodong_bg.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaihuodong/huodong_bg.jpg*/ no-repeat;}
+.box{ }
+
+.news_nav{ padding:35px 25px 35px 35px;}
+.news_nav ul li{ float:left; margin-right:12px;}
+.news_nav ul li a{ width:122px; height:42px; line-height:42px; background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat; text-align:center; color:#333; font-size:14px; display:block;}
+.news_nav ul li a:hover{background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat 0 -42px;}
+.news_nav ul li.dq a{background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat 0 -84px; color:#fff;}
+
+.news_list ul{ padding:0 35px;}
+.news_list ul li{ padding:20px 0; border-bottom:1px dotted #ddd; height:130px;}
+.news_list ul li img{ float:left; margin-right:22px; width:190px; height:130px;}
+.news_list ul li strong{ display:block; height:32px; line-height:32px; color:#333; font-size:16px;font-weight:100;}
+.news_list ul li strong em{ float:right; font-style:normal; color:#999; font-size:14px; }
+.news_list ul li p{ height:63px; line-height:21px; color:#999; margin:6px 0;}
+.news_list ul li p a{ color:#999;}
+.news_list ul li span{ }
+.news_list ul li span a{ color:#999; margin-right:16px;}
+.news_list ul li span b{ font-weight:100; margin-right:16px;background:url("../images/news/biaoqian.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/news/biaoqian.gif*/ no-repeat left  center; padding-left:20px; color:#999; line-height:24px; display:inline-block;}
+
+
+
+.content_bt{ padding:20px 0 14px;  margin:0 42px; border-bottom:1px dotted #ddd;}
+.content_ly{ padding:14px; color:#999; text-align:center;}
+.content_bt h1{ text-align:center; font-size:28px; font-family:"寰蒋闆呴粦"; color:#333;}
+.fenxiangdaima{ padding:14px 48px; font-size:14px;}
+.content2{ padding:16px 48px 48px 48px; font-size:14px; line-height:200%; color:#666;}
+.bshare-custom{ float:right;} 
+.nr_biaoqian { height:22px; line-height:22px;}
+.nr_biaoqian b{padding-left:18px; background:url("../images/news/biaoqian.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/news/biaoqian.gif*/ no-repeat left center; float:left; font-weight:100; color:#999; margin-right:10px;}
+.nr_biaoqian a{ float:left; color:#6FBA2C; margin-right:20px;}
+.shangxiapian{ padding:0 48px 48px 48px; font-size:14px; }

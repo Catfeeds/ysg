@@ -1,0 +1,48 @@
+.nava ul{ padding-left:496px;}
+.weizhi{ height:42px;  line-height:42px; color:#666; width:980px; margin:22px auto 0 auto; text-align:left;}
+.weizhi a{ color:#666;}
+
+
+.flexslider{position:relative; width:980px; height:500px;overflow:hidden;background:url("../images/loading.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/loading.gif*/ 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:500px;}
+.slides li a{ display:block; width:980px; height:500px;}
+.slides li img{ width:980px; height:500px;}
+.flex-control-nav{position:absolute; left:50%; bottom:20px; margin-left:-44px; z-index:999;}
+.flex-control-nav li{ float:left; width:16px;height:16px; margin-right:6px; display:inline;zoom:1; text-indent:-9999px; cursor:pointer;}
+.flex-control-nav a{ display:block; width:16px; height:16px; background:url("../images/dian.png")/*tpa=http://www.ysg.cn/templets/ysg/images/dian.png*/ no-repeat;  }
+.flex-control-nav .flex-active{  background:url("../images/dian.png")/*tpa=http://www.ysg.cn/templets/ysg/images/dian.png*/ no-repeat 0 -16px;}
+
+
+.weixincp h2{ height:94px; background:url("../images/chanpinzhanshi/weixin_bt.png")/*tpa=http://www.ysg.cn/templets/ysg/images/chanpinzhanshi/weixin_bt.png*/ no-repeat center center; text-indent:-9999px;}
+.weixincp,.product_list{ width:970px; overflow:hidden;}
+.weixincp ul,.product_list ul{ width:980px;}
+.weixincp ul li{ width:188px; height:238px; float:left; margin-right:7px;}
+.weixincp ul li span,.product_list ul li span{ display:block; width:188px; height:141px; position:relative; overflow:hidden;}
+.weixincp ul li span{ margin-bottom:12px;}
+.weixincp ul li span img,.product_list ul li span img{ width:188px; height:141px;}
+.weixincp ul li span i,.product_list ul li span i{ position:absolute; right:0; top:0; width:32px; height:49px; text-indent:-9999px;}
+.weixincp ul li span i.hot,.product_list ul li span i.hot{ background:url("../images/chanpinzhanshi/hot.png")/*tpa=http://www.ysg.cn/templets/ysg/images/chanpinzhanshi/hot.png*/ no-repeat;}
+.weixincp ul li span i.hot1,.product_list ul li span i.hot1{ background:url("../images/chanpinzhanshi/hot1.png")/*tpa=http://www.ysg.cn/templets/ysg/images/chanpinzhanshi/hot1.png*/ no-repeat;}
+.weixincp ul li em{ font-style:normal; color:#666; display:block; height:26px; line-height:26px; overflow:hidden; padding-left:33px;}
+.weixincp ul li em b{ font-weight:100; float:left;}
+.weixincp ul li em i{ font-size:26px; font-weight:bold; color:#FF4C4C; font-style:normal; float:left; padding:0 6px; font-family:Arial, Helvetica, sans-serif;}
+.weixincp ul li strong{ display:block; font-weight:100; line-height:26px; color:#FF810F; padding-left:33px;}
+
+.product_list ul li{ width:188px; height:179px; float:left; margin:0 7px 10px 0;}
+.product_list ul li strong{ display:block; height:38px; line-height:38px; text-align:center; color:#666; font-weight:100;}
+.product_list ul li strong a{ color:#666;}
+
+.product_zs{ padding:36px;}
+.product_zs_pic{ width:437px; height:321px; padding:10px; border:1px solid #eee; float:left;}
+.product_zs_pic img{ width:437px; height:321px;}
+.product_zs_js{ margin-left:494px; color:#666;}
+.product_zs_js h1{padding:7px 0;line-height:44px; border-bottom:1px solid #eee; font-size:32px; font-family:"微软雅黑"; color:#666;}
+.product_zs_js em{ display:block; font-style:normal; height:32px; line-height:32px; padding-bottom:20px;}
+.product_zs_js strong{ font-size:14px;}
+.product_zs_js1{ background-color:#FFF8ED; min-height:177px; line-height:26px; padding:14px 18px; margin-top:10px; font-size:14px; -moz-border-radius:15px; -webkit-border-radius:15px; border-radius:15px}
+.product_sxp{ font-size:14px; padding:0 36px 36px 36px;}
+.product_sxp a{ color:#666;}
+
+.xg_news{ padding-left:36px;}
+.xg_news .title{ margin-right:36px;}

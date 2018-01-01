@@ -1,0 +1,30 @@
+.nava ul{ padding-left:206px;}
+.footer_nav{ margin-top:0;}
+/*公司介绍*/
+.gongsijs1{ background:url("../images/gongsijieshao/1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/gongsijieshao/1.jpg*/ no-repeat; height:666px; text-indent:-9999px;}
+.gongsijs2{ background:url("../images/gongsijieshao/2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/gongsijieshao/2.jpg*/ no-repeat; height:86px; text-indent:-9999px;}
+.gongsijs3{ background:url("../images/gongsijieshao/3.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/gongsijieshao/3.jpg*/ no-repeat; height:144px; text-indent:-9999px;}
+
+.js_content{ background:url("../images/gongsijieshao/js_bg.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/gongsijieshao/js_bg.jpg*/ repeat-y; padding:20px 42px 42px 42px; font-size:16px; font-family:"微软雅黑"; color:#663300; line-height:30px;}
+.js_content p{ text-indent:2em;}
+.js_content1 { padding:20px 0;}
+.js_content1 img{ float:left;}
+.js_content1 div{ margin-left:426px;}
+.js_content1 ul li{ padding-top:12px;}
+.js_content1 ul li strong{ height:28px; line-height:28px; background-color:#FF5C26;  color:#fff; float:left; width:94px; text-align:center;}
+.js_content1 ul li span{ display:block; margin-left:104px; line-height:28px;}
+
+.wenhua{ background:url("../images/gongsijieshao/5.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/gongsijieshao/5.jpg*/ no-repeat; height:915px; position:relative; color:#663300; line-height:21px;}
+.wenhua strong{ display:none;}
+.wenhua .wh1{ width:240px; position:absolute; left:370px; top:278px;}
+.wenhua .wh2{ width:170px; position:absolute; left:196px; top:163px;}
+.wenhua .wh3{ width:136px; position:absolute; left:645px; top:163px;}
+.wenhua .wh4{ width:145px; position:absolute; left:222px; top:516px;}
+.wenhua .wh5{ width:120px; position:absolute; left:640px; top:500px;}
+
+/*公司荣誉*/
+.content{ padding:20px 40px 40px 40px; font-size:14px; line-height:180%; color:#525252;}
+.content h3{ font-size:20px; color:#FF810F; font-family:"微软雅黑"; line-height:60px;}
+.ry_demo{ width:900px; height:120px; overflow:hidden;}
+.ry_demo ul li{ height:120px; overflow:hidden; float:left; margin-right:7px;}
+.ry_demo ul li img{ height:120px;}

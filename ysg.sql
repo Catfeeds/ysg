@@ -38,7 +38,7 @@ create table tp_config(
     postal varchar(12) not null default '' comment '邮政编码',
     address varchar(512) not null default '' comment '地址',
     position tinyint not null default '1' comment '排序',
-    enabled enum('Y', 'N') not null default 'Y' comment '是否显示，Y是',
+    enabled enum('Y', 'N') not null default 'Y' comment '是否关闭站点，Y是',
     create_time int unsigned not null default '0' comment '创建时间',
     update_time int unsigned not null default '0' comment '修改时间'
 )engine = innodb default charset=utf8 comment = '配置表';
@@ -197,6 +197,8 @@ create table tp_company_culture(
     update_time int unsigned not null default '0' comment '修改时间'
 )engine = innodb default charset=utf8 comment = '公司文化图片';
 
+ALTER TABLE `tp_company_culture` add position int not null DEFAULT '1' after enabled;
+
 create table tp_company_service(
     id int not null primary key auto_increment,
     image varchar(512) not null default '' comment '图片地址',
@@ -204,7 +206,7 @@ create table tp_company_service(
     create_time int unsigned not null default '0' comment '创建时间',
     update_time int unsigned not null default '0' comment '修改时间'
 )engine = innodb default charset=utf8 comment = '营销服务图片';
-
+ALTER TABLE `tp_company_service` add position int not null DEFAULT '1' after enabled;
 
 create table tp_menu_topic(
     id int not null primary key auto_increment,
@@ -215,3 +217,22 @@ create table tp_menu_topic(
     update_time int unsigned not null default '0' comment '修改时间'
 )engine = innodb default charset=utf8 comment = '专题页';
 
+ALTER TABLE `tp_config` add slogan varchar(512) not null DEFAULT '' comment '宣传语图片' AFTER logo;
+
+create table tp_index_config(
+    id int not null primary key auto_increment,
+    brand_name varchar(32) not null default '' comment '品牌名称',
+    strength_title  varchar(64)  not null DEFAULT  '' comment '公司实力标题',
+    strength_logo VARCHAR(512) not null DEFAULT '' comment '公司实力底部图片',
+    culture_title  varchar(64)  not null DEFAULT  '' comment '公司文化标题',
+    brand_title  varchar(64)  not null DEFAULT  '' comment '强势品牌标题',
+    products_title  varchar(64)  not null DEFAULT  '' comment '产品标题',
+    products_logo  varchar(512)  not null DEFAULT  '' comment '产品宣传图',
+    service_title  varchar(64)  not null DEFAULT  '' comment '加盟服务标题',
+    service_subtitle  varchar(64)  not null DEFAULT  '' comment '加盟服务副标题',
+    service_logo VARCHAR(512) not null DEFAULT '' comment '加盟服务底部图片',
+    join_title  varchar(64)  not null DEFAULT  '' comment '加盟案例标题',
+    join_subtitle  varchar(64)  not null DEFAULT  '' comment '加盟案例副标题',
+    create_time int unsigned not null default '0' comment '创建时间',
+    update_time int unsigned not null default '0' comment '修改时间'
+)engine = innodb default charset=utf8 comment = '首页配置';
