@@ -1,0 +1,124 @@
+body{font-family:"微软雅黑"}
+.nava ul{ padding-left:206px;}
+
+.footer_nav{ margin-top:0;}
+.a-banner{ height:auto; overflow:hidden;}
+.weizhi-xian{ height:auto; overflow:hidden; text-align:left; border-bottom:1px solid #e9e9e9;}
+.weizhi{ line-height:40px;}
+.box9{height:auto; padding-top:50px;width:980px; background:#fff; position:relative; margin:70px auto 0 auto; box-shadow:0 0 2px 2px #eaeaea;}
+.ny-title{ width:980px; position:absolute; left:0; top:-30px;}
+
+.gsjj{ height:auto; overflow:hidden;}
+.gsjj dl dt{ float:left; width:409px; height:307px; padding:0px 20px 20px 15px;}
+.gsjj dl dd{ height:auto; overflow:hidden; padding-top:15px;}
+.gsjj dl dd p{ text-align:left; color:#444; font-size:16px; text-indent:2em; padding:10px 20px 0 0; line-height:36px;}
+
+/*一扫光软硬实力兼备，缔造休闲食品加盟优秀企业*/
+.rysl{ height:auto; overflow:hidden;}
+.rysl ul{ height:auto; overflow:hidden;}
+.rysl ul li{ width:305px; height:245px; float:left; margin:5px 3px 8px 15px;}
+.rysl ul li img{ width:305px; height:180px;}
+.rysl ul li p{ font-size:18px; line-height:50px;}
+
+.rysl dl{ height:auto; overflow:hidden; padding:20px 5px 20px 5px;}
+.rysl dl dt{ font-size:28px; color:#ff5d26; font-weight:bold; height:50px; line-height:50px;}
+.rysl dl dd{ float:left; width:230px; height:273px; padding-top:20px; margin-left:10px; display:inline;}
+
+.baozhang{ height:auto; overflow:hidden; width:950px; margin:0 auto; padding-bottom:20px;}
+.baozhang img{ float:left;}
+
+
+/*选对行业 选准品牌  一扫光零食量贩为您提供创富平台*/
+.hyys-pt{ height:auto; overflow:hidden;}
+.hyys-pt dl dt{ float:left; padding:0 20px 20px 15px;}
+.hyys-pt dl dd{ text-indent:2em; text-align:left;font-size:18px; line-height:42px; padding:50px 20px 0 0;}
+.hyys-pt dl dd span{ display:block; text-align:center; padding-top:40px;}
+
+
+
+/*休闲零食行业分析——民以食为天，永不饱和的市场*/
+
+.fenxi{ height:auto; overflow:hidden;}
+.fenxi dl{ height:auto; overflow:hidden; padding-bottom:40px;}
+.fenxi dl dt{ float:left; width:261px; height:163px; margin:0 20px 0 15px;}
+.fenxi dl dd{ height:auto; padding:0 30px 0 294px;}
+.fenxi dl dd strong{ display:block; text-align:left; text-indent:10px; height:46px; background:url("../images/about-news/ys-bj.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/about-news/ys-bj.jpg*/ no-repeat; line-height:46px; font-size:24px; color:#ff5d26; margin:10px 0;}
+.fenxi dl dd p{ text-align:left; font-size:18px; color:#555; line-height:33px;}
+
+
+/*品牌优势页面*/
+.ppys{ width:950px; margin:0 auto; height:auto; overflow:hidden; padding-bottom:20px;}
+.ppys p{ font-size:18px; text-indent:2em; line-height:36px; text-align:left; padding-bottom:20px;}
+.ppys div{height:auto; overflow:hidden;}
+.ppys-div{ height:auto; overflow:hidden; padding-bottom:40px;}
+
+
+/*企业文化页面*/
+.qywh{ height:auto; overflow:hidden;}
+.qywh dl{ height:auto; overflow:hidden; padding:10px 0 0px 5px;}
+.qywh dl dt{ padding-left:15px; line-height:50px; height:60px; font-weight:bold; text-align:left; font-size:22px; color:#222;}
+.qywh dl dd{ width:230px; height:213px; float:left; padding-left:10px;}
+.qywh dl dd p{ font-size:14px;}
+
+
+/*在线留言*/
+.msg_form{ padding-left:460px; height:auto; overflow:hidden; padding-top:26px;background:url("../images/about-news/zxly.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/about-news/zxly.jpg*/ 0 40px no-repeat;}
+.msg_form .tit{ font-size:16px; font-weight:bold; height:40px; text-align:left;color:#f00; padding-left:72px;}
+.msg_form li{ padding-bottom:22px; height:auto; overflow:hidden;}
+.msg_form i{ font-style:normal; color:#8C4600; float:left; width:10px; padding-top:10px;}
+.msg_form span{ font-size:16px; width:52px; float:left; padding:7px 10px 0 0; color:#8C4600;}
+.msg_form .bk{ float:left; border:1px solid #D2D2D2; width:338px; height:40px; line-height:40px; font-size:16px; padding-left:5px;}
+.msg_form .bk1{border:1px solid #D2D2D2; float:left; width:338px; height:100px; line-height:40px; font-size:16px; padding-left:5px;}
+.msg_form .btn{ width:130px; height:45px; text-align:center; font-size:20px; font-weight:bold; background-color:#FF5C26; color:#fff; border:0; cursor:pointer;}
+
+
+/*营销优势*/
+.qcpfg{ width:959px; height:auto; padding-bottom:20px; overflow:hidden; margin:0 auto;}
+.qcpfg img{ float:left;}
+.cpsc dl{ padding:0 0 5px 2px; height:auto; overflow:hidden;}
+.cpsc dl dt{ font-size:18px; color:#333; height:auto; overflow:hidden; padding:0 15px 20px 13px; line-height:36px; text-align:left; text-indent:2em;}
+.cpsc dl dd{ float:left; width:218px; height:214px; padding:4px; border:1px solid #e9e9e9; margin:0 0 13px 13px;}
+
+.xthgl p{font-size:18px; text-indent:2em; line-height:36px; text-align:left; padding:0 10px 20px 15px;}
+.xthgl li{ width:305px; height:188px; float:left; padding:5px 3px 20px 15px;}
+
+.hdyx-xian{ height:10px; margin:0 15px 30px 15px; border-bottom:1px dotted #ccc;}
+.hdyx-l{ width:520px; height:auto; overflow:hidden; text-align:left; padding-left:15px;}
+.hdyx-l strong{ display:block; color:#333; line-height:50px; font-size:30px; font-weight:normal;}
+.hdyx-l p{ font-size:18px; line-height:36px; padding:0 0 0 13px;}
+.hdyx-r{ width:423px; height:247px; margin-right:10px; margin-bottom:20px;}
+
+
+/*物流基地*/
+.wljd{ height:auto; overflow:hidden;}
+.wljd dl.dl1{ height:auto; overflow:hidden; padding-bottom:20px;}
+.wljd dl.dl1 dt{ float:left; width:419px; height:258px; margin:20px 0px 0 15px; display:inline;}
+.wljd dl.dl1 dd{ margin-left:450px; text-align:left; padding-top:35px;}
+.wljd dl.dl1 dd p{ padding:10px 25px 0 0; font-size:16px; line-height:36px; text-indent:2em;}
+.wljd dl.dl2{ height:auto; overflow:hidden; padding-top:10px;}
+.wljd dl.dl2 dt{ font-size:24px; color:#222; padding:0 15px; text-align:left; line-height:40px; padding-bottom:10px; height:40px;}
+.wljd dl.dl2 dd{ width:308px;  height:199px; padding:0 0 20px 15px; float:left;}
+
+
+
+/*总部支持*/
+.jmzc1{ height:auto; overflow:hidden;}
+.jmzc1 dl.dl1{ height:auto; overflow:hidden; padding:20px 20px 20px 0;}
+.jmzc1 dl.dl1 dt{ text-align:left; padding-left:45px; padding-bottom:30px;}
+.jmzc1 dl.dl1 dd{ width:130px; height:222px; float:left; padding:0 20px 0 45px; font-size:28px; color:#333;}
+
+
+.jmzc1 dl.dl2{ height:auto; overflow:hidden; padding:20px 0;}
+.jmzc1 dl.dl2 dt{ text-align:left; padding-left:45px; padding-bottom:30px;}
+.jmzc1 dl.dl2 dd{ width:130px; height:222px; float:left; padding:0 0px 0 45px; font-size:28px; color:#333;}
+
+
+.jmzc1 dl.dl3{ height:auto; overflow:hidden; padding:20px 0;}
+.jmzc1 dl.dl3 dt{ text-align:left; padding-left:45px; padding-bottom:30px;}
+.jmzc1 dl.dl3 dd{ width:886px; padding-bottom:40px; height:auto; overflow:hidden; margin:0 auto;}
+.jmzc1 dl.dl3 dd img{ float:left;}
+
+
+/*公司团队*/
+.tdcx{ height:auto; overflow:hidden;}
+.tdcx ul li{ width:308px; height:199px; float:left; margin:0 0 15px 15px;}

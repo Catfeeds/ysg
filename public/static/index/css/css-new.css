@@ -1,0 +1,398 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+*{ margin:0;  padding:0;}
+
+html,body,div,p,ul,ol,li,h1,h2,h3,h4,h5,h6,span,code,em,strong,dl,dt,dd,img{ border:0;}
+
+body{font-size:12px;color:#666;font-family:"宋体";text-align:center;background-color:#F6F6F6;}
+
+html,body{ height:100%;}
+
+select{ border:1px solid #ccc;}
+
+li{ list-style:none;}
+
+.left{ float:left;}
+
+.right{ float:right;} 
+
+/* ----- clear fix for floats ----- */
+
+/* these styles instruct non-IE browsers to render container elements so that they fully enclose floats */		
+
+/* without this class applied, a float might hang over the bottom border of it's container */
+
+.clearfix:after {content:"."; width:0; height:0; line-height:0; font-size:0; display:block; clear:both; visibility:hidden; overflow:hidden;margin:0;}
+
+.clearfix {display:inline-block;}
+
+/* Hides from IE-mac \*/
+
+* html .clearfix {height:1%;}
+
+.clearfix {display:block;}
+
+/* End hide from IE-mac */
+
+.clear{ clear:both; height:0; font-size:0; line-height:0; overflow:hidden;}
+
+.clearboth{ clear:both;}
+
+a{ color:#333; text-decoration:none; blr:expression(this.onFocus=this.blur()); outline: none; }
+
+area { blr:expression(this.onFocus=this.blur());}
+
+a:hover{ color:#bd0000;}
+
+.box{ width:980px; margin:0 auto; text-align:left;}
+
+.box1{ width:1000px; margin:0 auto; text-align:left;}
+
+.box2{ width:970px; background-color:#fff; padding:5px; margin:0 auto; overflow:hidden; text-align:left;}
+
+.mt18{ margin-top:18px;}
+
+.header{ background:url("../images/header_bg.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/header_bg.jpg*/ no-repeat center top #FEC536; height:113px;}
+
+.header .box1{ position:relative; z-index:2;}
+
+.header_l{ background:url("../images/h_logo_bg.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/h_logo_bg.png*/ no-repeat; width:163px; height:187px; position:absolute; left:1px; top:0; z-index:999;}
+
+.logo{ padding:7px 0 0 23px;}
+
+.h_sc{ padding:15px 45px 0 45px; display:none;}
+
+.h_sc a{ background:url("../images/pic_sc.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pic_sc.png*/ no-repeat center top; padding-top:22px; display:block; height:16px; line-height:16px; text-align:center; color:#333;}
+
+.h_wz{ padding:27px 0 0 180px; width:195px; float:left;}
+
+.search{ margin-top:40px; float:left; background:url("../images/search.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/search.png*/ no-repeat; width:350px; height:40px;}
+
+.search_text,.search_text1{ width:259px; height:20px; padding:10px; border:none; background:none; float:left; text-indent:34px;}
+
+.search_text{ color:#BEBEBE;}
+
+.search_text1{ color:#333;}
+
+.search_btn{ width:71px; height:40px; line-height:40px; font-size:14px; color:#fff; border:none; background:none; float:left; text-align:left; text-indent:17px; cursor:pointer;}
+
+.h_dianhua{ background:url("../images/h_dh.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/h_dh.png*/ no-repeat; width:165px; height:94px; float:right; margin-top:8px;text-indent:-9999px;}
+
+.tonghua a{ background:url("../images/tonghua.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/tonghua.png*/ no-repeat; width:154px; height:49px; padding:0; display:block; position:absolute; right:7px; top:112px; z-index:9999; font-size:20px; color:#fff; text-indent:52px; line-height:47px;font-family:"微软雅黑";}
+
+
+.mew{  height:45px;}
+.menu{background-color:#313137; z-index:1; height:45px; position:relative;}
+.menu .box1{}
+.menu ul{ padding-left:160px;}
+.menu ul li{ float:left;}
+.menu ul li a{ padding:0 14px; float:left; color:#fff; line-height:45px; font-size:15px; font-weight:bold;}
+.menu ul li a:hover,.menu ul li.menuhover a,.menu ul li.dq a,.menu ul li.xl a{ background:url("../images/menu_hover.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_hover.jpg*/ repeat-x;}
+.menu>.box1>ul>li:last-child{ display:none;}
+.menu_xl{ display:none;}
+.menu ul li.xl .menu_xl{ display:block; position:absolute; left:0; top:45px; width:100%; z-index:928; background:url("../images/menu_xl.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_xl.png*/ repeat-x; height:44px; line-height:40px; font-size:14px;}
+.nava{ z-index:998; background:url("../images/menu_xl.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_xl.png*/ repeat-x; height:40px; line-height:40px; font-size:14px;}
+.menu_xl ul,.nava ul { padding:7px 0 0 351px; height:33px;}
+.xl1 ul{ padding-left:206px;}
+.xl2 ul{ padding-left:284px;}
+.xl3 ul{ padding-left:355px;}
+.xl4 ul{ padding-left:440px;}
+.xl5 ul{ padding-left:525px;}
+.xl6 ul{ padding-left:496px;}
+.menu_xl ul li,.nava ul  li{ float:left; padding:0 12px; background:url("../images/menu_fg.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_fg.png*/ no-repeat right center; height:26px; line-height:26px;}
+.menu_xl ul li.qline,.nava ul li.qline{ background:none;}
+.menu ul li.xl .menu_xl ul li a{ background:none;}
+.menu_xl ul li a,.nava ul  li a{display:block; float:left; width:76px; height:26px; line-height:26px;  color:#fff;text-align:center; padding:0; }
+.menu ul li.xl .menu_xl ul li a:hover,.nava ul  li a:hover,.nava ul  li.dq a{ background:url("../images/menu_a.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_a.png*/ no-repeat; }
+
+.menu_xl ul li a{ font-size:14px;}
+
+
+
+.menu ul li.xl .menu_xl {
+
+    -webkit-animation: slideup 300ms;
+
+    animation: slideup 300ms;
+
+    visibility: visible;
+
+}
+
+
+
+@keyframes slideup {
+
+    0% { transform: translateY(-5px); opacity: 0.8; }
+
+    100% { transform: translateY(0px); opacity: 1; }
+
+}
+
+
+
+@-webkit-keyframes slideup {
+
+    0% { -webkit-transform: translateY(-5px); opacity: 0.8; }
+
+    100% { -webkit-transform: translateY(0px); opacity: 1; }
+
+}
+
+
+
+
+
+
+
+
+
+.footer_nav{ height:45px; line-height:45px; color:#fff; background-color:#313137; margin-top:16px;}
+
+.footer_nav .box{ text-align:center;}
+
+.footer_nav a{ margin:0 35px; color:#fff; font-size:14px;}
+
+
+
+.footer{ background:url("../images/footer_bg.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/footer_bg.jpg*/ no-repeat center top; height:253px;}
+
+.footer .box{ position:relative;}
+
+.footer_logo{ float:left; padding:30px 0 0 15px; width:524px;}
+
+.footer_dh{ float:left; padding-top:65px; width:332px;}
+
+.footer_dh span{ display:block; height:60px;}
+
+
+
+.footer_dh .search_text,.footer_dh .search_text1{ width:173px; height:21px; line-height:21px; padding:7px 10px; border:none; background:#fff; float:left; text-indent:0;}
+
+.footer_dh .search_btn{ width:86px; height:35px; background:#FF9326; text-align:center; text-indent:0; font-size:14px; line-height:35px;}
+
+.footer_wx{ float:left; text-align:center; width:101px; padding-top:28px; line-height:18px;}
+
+.footer_wx p{ padding-top:11px; color:#B25900;}
+
+.footer_wz{ position:absolute; left:0; top:150px; width:980px; text-align:center; line-height:22px; color:#B25900;}
+
+
+
+
+
+
+
+.bgred{ background-color:#663300; margin-top:-4px; padding-bottom:18px;}
+
+.bgred .weizhi{ height:35px; line-height:34px; background-color:#360; padding:0 10px; color:#fff;}
+
+.bgred .weizhi a{ color:#fff;}
+
+
+
+.msg{ background:#FFF6ED url("../images/dian_pic.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/dian_pic.jpg*/ no-repeat 76px 58px; height:433px; font-family:"微软雅黑";}
+
+.msg .msg_form{ padding-left:460px; padding-top:36px;}
+
+.msg .msg_form .tit{ font-size:16px; font-weight:bold; height:40px; color:#8C4600; padding-left:60px;}
+
+.msg .msg_form li{ padding-bottom:22px;}
+
+.msg .msg_form i{ font-style:normal; color:#8C4600; float:left; width:10px; padding-top:10px;}
+
+.msg .msg_form span{ font-size:16px; width:50px; float:left; padding:7px 0 0 0; color:#8C4600;}
+
+.msg .msg_form .bk{ border:1px solid #D2D2D2; width:338px; height:40px; line-height:40px; font-size:16px; padding-left:5px;}
+
+.msg .msg_form .bk1{border:1px solid #D2D2D2; width:338px; height:100px; line-height:40px; font-size:16px; padding-left:5px;}
+
+.msg .msg_form .btn{ width:130px; height:45px; text-align:center; font-size:20px; font-weight:bold; background-color:#FF5C26; color:#fff; border:0; cursor:pointer;}
+
+
+
+.fn_content_lc{ padding:10px 0 25px 0; line-height:180%; color:#333; font-family:"微软雅黑";}
+
+.liucheng_jd{ background:url("../images/jieduan.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/jieduan.png*/ no-repeat left bottom; height:273px; margin-left:48px;}
+
+.liucheng_jd h3{ height:70px; line-height:70px; font-size:30px; font-family:"微软雅黑"; color:#FF8000; text-align:center;}
+
+.liucheng_jd div{ width:267px; float:left; margin-right:40px;}
+
+.liucheng_jd div strong{ padding-top:10px; height:60px; line-height:60px; color:#8C4600; display:block; font-size:20px; text-align:center;}
+
+.liucheng_jd div p{ padding:0 30px; line-height:25px; color:#666;}
+
+
+
+.anli_list{ background-color:#FFFAEA; width:980px; overflow:hidden;}
+
+.anli_list ul{ padding:40px 0 0 46px;}
+
+.anli_list ul li{ width:276px; float:left; margin:0 30px 46px 0;}
+
+.anli_list ul li span{width:276px; height:300px; display:block; overflow:hidden;}
+
+.anli_list ul li img{ width:276px; height:300px;}
+
+.anli_list ul li div{ height:210px; background-color:#fff;  -webkit-box-shadow:0 2px 3px #EBE7D8;  -moz-box-shadow:0 2px 3px #EBE7D8;  box-shadow:0 2px 3px #EBE7D8;}
+
+.anli_list ul li div em{ display:block; font-style:normal; height:40px; line-height:40px; padding-top:5px; font-size:14px; color:#8C4600; text-align:center;}
+
+.anli_list ul li div strong{ height:60px; line-height:30px; display:block; text-align:center; font-size:24px; color:#FF8000; font-family:"微软雅黑";}
+
+.anli_list ul li div p{ line-height:21px; padding:0 42px; color:#666; height:84px; overflow:hidden; padding-top:7px;}
+
+
+
+.mendian_list { background-color:#FFF8DF; padding-bottom:20px;}
+
+.news_bt{ height:28px; line-height:28px; background:url("../images/h2_bt.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/h2_bt.png*/ no-repeat 22px center; font-size:20px; font-family:"微软雅黑"; color:#545454; padding-left:38px; }
+
+.mendian_list ul{ padding:20px 0 0 20px;}
+
+.mendian_list ul li{ width:220px; text-align:center; float:left; margin:0 20px 20px 0;}
+
+.mendian_list ul li span{width:220px; height:190px; display:block; overflow:hidden;}
+
+.mendian_list ul li span img{ width:220px; height:190px;}
+
+.mendian_list ul li p{ line-height:22px; height:44px; color:#333; font-size:14px; margin-top:8px;}
+
+
+
+
+
+
+
+
+
+.page{ height:36px; text-align:center; padding:40px 0; font-size:14px;}
+
+.page ol { *zoom:1; display:inline;}
+
+.page ol li{*zoom:1; display:inline;  height:36px; overflow:hidden; margin:0 3px;}
+
+* html .page ol li{ display:inline;}
+
+.page a{*zoom:1; display:inline-block;}
+
+.page a,.page span,.page span a{  *zoom:1;display:inline-block; }
+
+.page a,.page ol li span{ padding:8px 12px; line-height:18px; border:1px solid #DFDFDF;  background-color:#fff; color:#3D3D3D;}
+
+.page a{ }
+
+.page ol li a:hover{ background-color:#e2e2e2;}
+
+.page ol li a{ font-family:Arial, Helvetica, sans-serif; }
+
+.page ol li.active span,.page a.thislink{ font-family:Arial, Helvetica, sans-serif;  background-color:#F39801; border:1px solid #F39801; color:#fff; font-weight:bold; color:#fff;}
+
+.page ol li.disabled span{ color:#666;}
+
+.page ol li.page_s span{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat 0 -2px #fff; padding-left:20px; color:#ccc;}
+
+.page ol li.page_s a{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat 0 -42px #fff; padding-left:20px; color:#3D3D3D;}
+
+.page ol li.page_s a:hover{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat 0 -42px #e2e2e2; padding-left:20px; color:#3D3D3D;}
+
+
+
+.page ol li.page_x span{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat right -82px #fff; padding-right:20px; color:#ccc;}
+
+.page ol li.page_x a{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat right -122px #fff; padding-right:20px; color:#3D3D3D;}
+
+.page ol li.page_x a:hover{ background:url("../images/page.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/page.gif*/ no-repeat right -122px #e2e2e2; }
+
+
+
+
+
+
+
+.product_bt{ border-bottom:2px solid #93CB60; width:970px; overflow:hidden;}
+
+.product_bt ul li{ float:left; height:88px; }
+
+.product_bt ul li a{ width:90px; height:88px; display:block; float:left; text-indent:-9999px;border-left:1px solid #DAEDC8; }
+
+.product_bt ul li a.pic1{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -1px 0; width:90px;}
+
+.product_bt ul li a.pic2{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -92px 0; width:98px;}
+
+.product_bt ul li a.pic3{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -191px 0; width:100px;}
+
+.product_bt ul li a.pic4{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -292px 0; width:97px;}
+
+.product_bt ul li a.pic5{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -389px 0; width:98px;}
+
+.product_bt ul li a.pic6{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -489px 0; width:96px;}
+
+.product_bt ul li a.pic7{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -586px 0; width:95px;}
+
+.product_bt ul li a.pic8{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -682px 0; width:97px;}
+
+.product_bt ul li a.pic9{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -780px 0; width:96px;}
+
+.product_bt ul li a.pic10{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -877px 0; width:92px; border-right:1px solid #DAEDC8;}
+
+
+
+
+
+
+
+.product_bt ul li a.pic1:hover,.product_bt ul li.dq a.pic1{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat 0 -90px; width:90px; border-left:none; padding-left:1px;}
+
+.product_bt ul li a.pic2:hover,.product_bt ul li.dq a.pic2{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -92px -90px; width:98px;}
+
+.product_bt ul li a.pic3:hover,.product_bt ul li.dq a.pic3{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -191px -90px; width:100px;}
+
+.product_bt ul li a.pic4:hover,.product_bt ul li.dq a.pic4{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -292px -90px; width:97px;}
+
+.product_bt ul li a.pic5:hover,.product_bt ul li.dq a.pic5{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -389px -90px; width:98px;}
+
+.product_bt ul li a.pic6:hover,.product_bt ul li.dq a.pic6{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -489px -90px; width:96px;}
+
+.product_bt ul li a.pic7:hover,.product_bt ul li.dq a.pic7{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -586px -90px; width:95px;}
+
+.product_bt ul li a.pic8:hover,.product_bt ul li.dq a.pic8{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -682px -90px; width:97px;}
+
+.product_bt ul li a.pic9:hover,.product_bt ul li.dq a.pic9{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -780px -90px; width:96px;}
+
+.product_bt ul li a.pic10:hover,.product_bt ul li.dq a.pic10{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -877px -90px; width:93px; border-right:none;}
+
+.product_all{ height:26px; padding:12px 0;}
+
+.product_all a{  width:66px; height:26px; line-height:26px; text-align:center; display:block; float:left; margin-right:10px; font-size:14px; color:#333;}
+
+.product_all a:hover{background:url("../images/chanpin_a.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/chanpin_a.jpg*/ no-repeat 0 -26px;}
+
+.product_all a.dq{background:url("../images/chanpin_a.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/chanpin_a.jpg*/ no-repeat; color:#fff;}
+
+
+
+
+
+.xg_news { padding-left:48px;}
+
+.xg_news .title{ border-bottom:1px solid #D6D6D6; height:48px; position:relative; margin-right:48px;}
+
+.xg_news .title strong{ position:absolute; left:0; top:0;display:block; font-size:18px; font-family:"微软雅黑"; height:47px; line-height:47px; border-bottom:2px solid #FCBB1D; color:#333;}
+
+.xg_news ul{ padding:10px 0 30px 0;}
+
+.xg_news ul li{ float:left; padding-left:10px; width:408px; height:26px; line-height:26px; font-size:14px; background:url("../images/dian.gif")/*tpa=http://www.ysg.cn/templets/ysg/style/images/dian.gif*/ no-repeat left center; overflow:hidden; margin-right:48px;}
+
+.xg_news ul li em{ float:right; font-style:normal; color:#999;}
+
+.youshi16{ background:url("../images/16.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/16.jpg*/ no-repeat center top; height:180px; margin-top:15px;}
+
+.youshi16 a{ display:block; height:150px;text-indent:-9999px}
+
+
+
+.top_60{ height:60px; background:url("../../images/flash/top_60.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/flash/top_60.jpg*/ no-repeat center; cursor:pointer;}

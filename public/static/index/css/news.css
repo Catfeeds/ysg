@@ -1,0 +1,56 @@
+
+.weizhi{ height:42px;  line-height:42px; color:#666; width:980px; margin:0 auto; text-align:left;}
+.weizhi a{ color:#666;}
+
+.box{ }
+
+.news_nav{ padding:35px 25px 35px 35px;}
+.news_nav ul li{ float:left; margin-right:12px;}
+.news_nav ul li a{ width:122px; height:42px; line-height:42px; background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat; text-align:center; color:#333; font-size:14px; display:block;}
+.news_nav ul li a:hover{background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat 0 -42px;}
+.news_nav ul li.dq a{background:url("../images/news/news_nav.png")/*tpa=http://www.ysg.cn/templets/ysg/images/news/news_nav.png*/ no-repeat 0 -84px; color:#fff;}
+
+.news_list ul{ padding:0 35px;}
+.news_list ul li{ padding:20px 0; border-bottom:1px dotted #ddd; height:130px;}
+.news_list ul li img{ float:left; margin-right:22px; width:190px; height:130px;}
+.news_list ul li strong{ display:block; height:32px; line-height:32px; color:#333; font-size:16px;font-weight:100;}
+.news_list ul li strong em{ float:right; font-style:normal; color:#999; font-size:14px; }
+.news_list ul li p{ height:63px; line-height:21px; color:#999; margin:6px 0;}
+.news_list ul li p a{ color:#999;}
+.news_list ul li span{ }
+.news_list ul li span a{ color:#999; margin-right:16px;}
+.news_list ul li span b{ font-weight:100; margin-right:16px;background:url("../images/news/biaoqian.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/news/biaoqian.gif*/ no-repeat left  center; padding-left:20px; color:#999; line-height:24px; display:inline-block;}
+
+
+.wenda_list ul{ padding:0 35px;}
+.wenda_list ul li{ padding:20px 0; border-bottom:1px dotted #ddd;}
+.wenda_list ul li strong{ display:block; height:30px; line-height:30px; font-size:16px; color:#FF8000; background:url("../images/fangan/wenda_pic.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/wenda_pic.gif*/ no-repeat; padding-left:44px;}
+.wenda_list ul li strong a,.wenda_list ul li p a{ color:#FF8000;}
+.wenda_list ul li p{ padding:2px 0; line-height:26px; background:url("../images/fangan/wenda_pic.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/wenda_pic.gif*/ no-repeat 0 -42px; margin-top:12px; font-size:14px; color:#555; padding-left:40px;}
+
+
+
+.content_bt{ padding:40px 0 14px;  margin:0 42px; border-bottom:1px dotted #ddd;}
+.content_ly{ padding:14px; color:#999; text-align:center;}
+.content_bt h1{ text-align:center; font-size:28px; font-family:"microsoft yahei","黑体"; color:#333;}
+.fenxiangdaima{ padding:14px 48px; font-size:14px;}
+.content2{ padding:16px 48px 48px 48px; font-size:14px; line-height:200%; color:#666;}
+.bshare-custom{ float:right;} 
+.nr_biaoqian { height:22px; line-height:22px;}
+.nr_biaoqian b{padding-left:18px; background:url("../images/news/biaoqian.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/news/biaoqian.gif*/ no-repeat left center; float:left; font-weight:100; color:#999; margin-right:10px;}
+.nr_biaoqian a{ float:left; color:#6FBA2C; margin-right:20px;}
+.shangxiapian{ padding:0 48px 48px 48px; font-size:14px; }
+
+.biaoqian { padding:20px 0;}
+.biaoqian .news_bt{ margin-left:13px;}
+.biaoqian ul{ padding:20px 35px;}
+.biaoqian ul li{ float:left; margin:0 20px 14px 0; height:30px;}
+.biaoqian ul li a{ height:28px; line-height:28px; padding:0 12px; display:block; float:left; font-size:14px; border:1px solid #e2e2e2; white-space:nowrap;}
+.biaoqian ul li a:hover{ background-color:#ff9326; border:1px solid #ff9326; color:#fff;}
+
+.map_list{ padding:0 33px;}
+.map_list dl{ height:48px; margin-top:14px; background:url("../images/map_bg.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/map_bg.jpg*/ repeat-y;}
+.map_list dl dt{ float:left; width:120px; height:48px; line-height:48px; text-align:center; color:#fff; font-size:18px; font-family:"microsoft yahei";}
+.map_list dl dt a{ color:#fff;}
+.map_list dl dd{ width:793px; padding:8px 0; float:right; line-height:30px; border-top:1px solid #e1e1e1; border-right:1px solid #e1e1e1; border-bottom:1px solid #e1e1e1; }
+.map_list dl dd a{ float:left; padding:0 13px 0 12px; background:url("../images/fg2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fg2.jpg*/ no-repeat right center; color:#666; white-space:nowrap;}

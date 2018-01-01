@@ -1,0 +1,147 @@
+.nava ul{ padding-left:284px;}
+/*加盟优势*/
+.footer_nav{ margin-top:0;}
+.youshi1,.youshi2,.youshi3,.youshi4,.youshi5,.youshi6,.youshi7,.youshi8,.youshi9,.youshi10,.youshi12,.youshi13 a,.youshi14 a,.youshi15{ text-indent:-9999px}
+.youshi1{ background:url("../images/pinpaiyoushi/1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/1.jpg*/ no-repeat center top; height:200px;}
+.youshi2{ background:url("../images/pinpaiyoushi/2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/2.jpg*/ no-repeat center top; height:200px;}
+.youshi3{ background:url("../images/pinpaiyoushi/3.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/3.jpg*/ no-repeat center top; height:200px;}
+.youshi4{ background:url("../images/pinpaiyoushi/4.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/4.jpg*/ no-repeat center top; height:200px;}
+.youshi5{ background:url("../images/pinpaiyoushi/5.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/5.jpg*/ no-repeat center top; height:200px;}
+.youshi6{ background:url("../images/pinpaiyoushi/6.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/6.jpg*/ no-repeat center top; height:200px;}
+.youshi7{ background:url("../images/pinpaiyoushi/7.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/7.jpg*/ no-repeat center top; height:200px;}
+.youshi8{ background:url("../images/pinpaiyoushi/8.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/8.jpg*/ no-repeat center top; height:200px;}
+.youshi9{ background:url("../images/pinpaiyoushi/9.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/9.jpg*/ no-repeat center top; height:200px;}
+
+.youshi10{ background:url("../images/pinpaiyoushi/10.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/10.jpg*/ no-repeat center top; height:473px; margin-top:14px;}
+.youshi11{ background:url("../images/pinpaiyoushi/11.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/11.jpg*/ no-repeat center top; height:150px; margin-top:15px; position:relative;}
+.youshi11 p{ display:none;}
+.youshi11 a{ position:absolute; left:740px; top:91px; width:160px; height:35px; display:block;}
+.youshi12{ background:url("../images/pinpaiyoushi/12.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/12.jpg*/ no-repeat center top; height:660px; margin-top:15px;}
+.youshi13{ background:url("../images/pinpaiyoushi/13.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/13.jpg*/ no-repeat center top; height:150px; margin-top:15px;}
+.youshi13 a{ display:block; height:150px;}
+.youshi14{ background:url("../images/pinpaiyoushi/14.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/14.jpg*/ no-repeat center top; height:1224px; margin-top:15px; position:relative;}
+.youshi14 a{ width:243px; height:82px; position:absolute; left:346px; bottom:0; display:block; height:150px;}
+.youshi14 p{ display:none;}
+.youshi15{ background:url("../images/pinpaiyoushi/15.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/pinpaiyoushi/15.jpg*/ no-repeat center top; height:1361px; margin-top:15px; position:relative;}
+
+
+
+/*加盟方案*/
+.fangan_nav{ background:url("../images/fangan/fangan_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_nav.jpg*/ no-repeat; height:170px;}
+.fangan_nav ul{ padding:12px 0 0 0;}
+.fangan_nav ul li{ width:489px; height:148px; float:left; }
+.fangan_nav ul li a{ width:489px; height:148px; display:block; float:left; }
+.fangan_nav ul li i{ width:489px; height:148px; display:block; float:left; text-indent:-9999px;}
+.fangan_nav ul li.dq i,.fangan_nav ul li a:hover i{background:url("../images/fangan/fangan_nav_dq.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_nav_dq.gif*/ no-repeat center bottom; }
+
+.fangan{margin-top:32px; position:relative; padding-bottom:12px;}
+.fanan_zs1{ height:336px; overflow:hidden;}
+.dian_zs{ height:336px; }
+.fangan_qh{ width:120px; float:left; padding-left:15px; margin-right:16px; }
+.fangan_qh ul li a{ display:block; background-color:#FFF8ED; height:68px; display:block; line-height:68px; border-top:1px solid #fff; border-bottom:1px solid #FFDFAE; font-size:14px; text-align:center; color:#666; position:relative;}
+.fangan_qh ul li a i{  width:8px; height:18px; position:absolute; right:-8px; top:28px;}
+.fangan_qh ul li.dq a{ background-color:#F4A219;  border-top:1px solid #fff; border-bottom:1px solid #F4A219; color:#fff; }
+.fangan_qh ul li.dq a i{background:url("../images/fangan/fangan_dq.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_dq.gif*/ no-repeat;}
+.fangan_qh ul li.qline a{  border-bottom:none;}
+.fangan_qh ul li.qline1{ border-top:none;}
+
+.fanan_zs1{ width:806px; position:relative; padding-left:50px;}
+.dian_pic{ float:left; width:352px;}
+.dian_js{ margin-left:400px;}
+.dian_js h2{ font-size:20px; color:#666; height:36px; line-height:36px; padding-top:5px; font-family:"微软雅黑"; font-weight:100;}
+.dian_je{ height:36px; line-height:36px; font-family:"微软雅黑"; font-size:20px;}
+.dian_je b{ float:left; font-weight:100;}
+.dian_je em{ font-style:normal; font-size:26px; font-weight:bold; color:#FF810F;}
+.dian_js1{ margin-top:14px; width:372px; border:1px dotted #FFB973; height:58px; padding:16px 14px; line-height:26px;  -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; font-size:14px; }
+.dian_js1 b{ font-weight:100; float:left;}
+.dian_js1 .xing{  height:26px; line-height:26px; text-decoration:-9999px; display:block; float:left; text-indent:-9999px; width:142px;}
+.dian_js1 .xing5{background:url("../images/fangan/xing.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/xing.jpg*/ no-repeat 0 2px;}
+.dian_js1 .xing4{background:url("../images/fangan/xing.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/xing.jpg*/ no-repeat 0 -24px;}
+.dian_js1 .xing3{background:url("../images/fangan/xing.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/xing.jpg*/ no-repeat 0 -50px;}
+
+.fangan .btn1{ position:absolute; left:450px; top:200px; background:url("../images/fangan/fangan_pic.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_pic.jpg*/ no-repeat 6px 0; width:60px; text-align:center; padding-top:48px; line-height:34px; color:#666;}
+.fangan .btn2{ position:absolute; left:530px; top:200px; background:url("../images/fangan/fangan_pic.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_pic.jpg*/ no-repeat -66px 0; width:94px; text-align:center; padding-top:48px; line-height:34px; color:#666;}
+.fan_iphone{ position:absolute; left:650px; top:230px;  background:url("../images/fangan/fangan_pic.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_pic.jpg*/ no-repeat -177px -5px; width:213px; height:26px;text-indent:-9999px;}
+.fan_dianhua{ position:absolute; left:718px; top:285px; background:url("../images/fangan/fangan_pic.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fangan_pic.jpg*/ no-repeat -173px -39px; width:236px; height:36px;}
+.fan_dianhua .search_text,.fan_dianhua .search_text1{ width:135px; height:20px; line-height:20px; padding:8px 10px; border:none; background:none; float:left; text-indent:0;}
+.fan_dianhua .search_btn{ width:81px; height:36px; background:none; text-align:center; text-indent:0; font-size:14px; line-height:35px;}
+
+.fangan_xq{ border:1px solid #eee; margin:18px 15px 0 15px; font-size:14px; padding:15px 10px 25px 10px;}
+.fangan_xq ul li{ padding-top:10px; line-height:30px; color:#333;}
+.fangan_xq ul li span{ float:left; background:url("../images/fangan/bt1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/bt1.jpg*/ no-repeat; width:100px; height:30px; color:#fff; text-align:center;}
+.fangan_xq ul li p{ margin-left:110px;}
+.fn_bt{ background:url("../images/fangan/bg1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/bg1.jpg*/ repeat-x #FFF1E3;color:#333; }
+.fn_bt h2{ height:63px; background:url("../images/fangan/fa_bt.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fa_bt.jpg*/ no-repeat center top; width:372px; height:63px; margin:0 auto;}
+.fn_bt h2 strong{ display:block; height:54px; line-height:54px; font-size:30px; font-family:"微软雅黑"; color:#fff; text-align:center; text-indent:-50px}
+.fn_bt1 strong{ background:url("../images/fangan/fn_bt1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt1.jpg*/ no-repeat 227px 11px;}
+.fn_bt2 strong{ background:url("../images/fangan/fn_bt2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt2.jpg*/ no-repeat 227px 9px;}
+.fn_bt3 strong{ background:url("../images/fangan/fn_bt3.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt3.jpg*/ no-repeat 227px 10px;}
+.fn_bt4 strong{ background:url("../images/fangan/fn_bt4.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt4.jpg*/ no-repeat 227px 14px;}
+.fn_bt5 strong{ background:url("../images/fangan/fn_bt5.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt5.jpg*/ no-repeat 227px 10px;}
+.fn_bt6 strong{ background:url("../images/fangan/fn_bt6.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/fn_bt6.jpg*/ no-repeat 227px 15px;}
+.fn_ollb{ padding:10px 48px 25px 48px; font-size:16px; font-family:"微软雅黑"; line-height:36px; }
+.fn_ollb strong{}
+.fn_ollb ol{ background:url("../images/fangan/shuzi.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/shuzi.gif*/ no-repeat left 6px; padding-left:30px;}
+.fangan_tj ol li{ }
+
+.fn_quyu{ height:60px; line-height:60px; font-size:36px; text-align:center; padding:20px 25px; color:#333; font-family:"微软雅黑"; }
+
+.feiyong{ background:url("../images/fangan/feiyong.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/feiyong.jpg*/ no-repeat; height:168px; margin-left:8px; font-size:16px; font-family:"微软雅黑"; color:#fff; margin-top:30px; width:970px; overflow:hidden;}
+.feiyong ul { width:1050px; padding-left:45px;}
+.feiyong ul li{ width:120px; line-height:24px; padding-top:12px; height:60px; float:left; margin-right:70px; text-align:center;}
+/*.feiyong ul li{ width:120px; line-height:24px; padding-top:12px; height:60px; float:left; margin-right:21px; text-align:center;}
+*/
+.feiyong span{ padding-top:10px; display:block;}
+.fn_heji{ width:300px; height:72px;line-height:24px; padding-top:12px; height:60px; text-align:center; margin-top:23px; padding-left:325px;}
+
+.fn_content{ margin:0 48px; padding:10px 0 25px; line-height:180%; font-size:16px; font-family:"微软雅黑";}
+.fn_content h3{ font-size:36px; height:80px; line-height:70px; text-align:center; color:#333; font-family:"微软雅黑"; font-weight:100;}
+.table1{ border-left:1px solid #ECE6E0; border-top:1px solid #ECE6E0; background-color:#fff;}
+.table1 tr td,.table1 tr th{ border-right:1px solid #ECE6E0; border-bottom:1px solid #ECE6E0; line-height:50px; padding-left:40px; color:#666;}
+
+
+/*加盟案例*/
+.anli1{ height:200px; background:url("../images/jiamenganli/1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/1.jpg*/ no-repeat center top;  text-indent:-9999px;}
+.anli2{ height:200px; background:url("../images/jiamenganli/2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/2.jpg*/ no-repeat center top; position:relative;}
+.anli2 a{ width:180px; height:40px; display:block; text-indent:-9999px; position:absolute; left:397px; top:8px;}
+.anli3{ height:200px; background:url("../images/jiamenganli/3.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/3.jpg*/ no-repeat center top;  text-indent:-9999px;}
+.anli4{ height:200px; background:url("../images/jiamenganli/4.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/4.jpg*/ no-repeat center top;}
+.anli5{ height:181px; background:url("../images/jiamenganli/5.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/5.jpg*/ no-repeat center top; text-indent:-9999px;}
+.anli6{ height:761px; background:url("../images/jiamenganli/6.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/6.jpg*/ no-repeat center top; position:relative;}
+.anli6 div{ position:absolute; width:134px; padding:0 12px; height:100px; color:#fff; text-align:center;}
+.anli6 div strong{ display:block;}
+.anli6 div.wz1{ left:201px; top:117px; line-height:26px;}
+.anli6 div.wz2{ left:411px; top:90px;line-height:26px;}
+.anli6 div.wz3{ left:617px; top:117px; line-height:18px;}
+.anli6 div.wz4{ left:125px; top:253px; line-height:18px;}
+.anli6 div.wz5{ left:718px; top:251px; line-height:18px;}
+
+.anli6 div.wz6{ left:122px; top:389px; line-height:18px;}
+.anli6 div.wz7{ left:723px; top:395px; line-height:26px;}
+
+.anli6 div.wz8{ left:208px; top:547px; line-height:26px;}
+.anli6 div.wz9{ left:420px; top:588px; line-height:18px;}
+.anli6 div.wz10{ left:631px; top:542px; line-height:18px;}
+.anli6 div.wz1 strong,.anli6 div.wz2 strong,.anli7 div.wz2 strong,.anli6 div.wz8 strong,.anli6 div.wz7 strong{ padding-top:20px;}
+.anli6 div.wz3 strong,.anli6 div.wz4 strong,.anli6 div.wz5 strong,.anli6 div.wz6 strong,.anli6 div.wz9 strong{ padding-top:14px; padding-bottom:6px;}
+.anli6 div.wz10 strong{ padding-top:4px;}
+
+.anli7{ height:215px; background:url("../images/jiamenganli/7.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/jiamenganli/7.jpg*/ no-repeat center top; position:relative;}
+
+
+
+/*加盟问答*/
+.wenda_list ul{ padding:0 24px;}
+.wenda_list ul li{ padding:30px 10px; border-bottom:1px dotted #bbb;}
+.wenda_list ul li strong{ display:block; height:30px; line-height:30px; font-size:16px; color:#FF8000; background:url("../images/fangan/wenda_pic.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/wenda_pic.gif*/ no-repeat; padding-left:44px;}
+.wenda_list ul li p{ padding:2px 0; line-height:26px; background:url("../images/fangan/wenda_pic.gif")/*tpa=http://www.ysg.cn/templets/ysg/images/fangan/wenda_pic.gif*/ no-repeat 0 -42px; margin-top:12px; font-size:14px; color:#555; padding-left:40px;}
+
+/*门店展示*/
+.mendian1,.mendian2,.mendian3,.mendian4,.mendian5,.mendian6{ height:200px; text-indent:-2000px;}
+.mendian1{ background:url("../images/mendianzhanshi/1.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/1.jpg*/ no-repeat center top;}
+.mendian2{ background:url("../images/mendianzhanshi/2.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/2.jpg*/ no-repeat center top;}
+.mendian3{ background:url("../images/mendianzhanshi/3.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/3.jpg*/ no-repeat center top;}
+.mendian4{ background:url("../images/mendianzhanshi/4.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/4.jpg*/ no-repeat center top;}
+.mendian5{ background:url("../images/mendianzhanshi/5.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/5.jpg*/ no-repeat center top;}
+.mendian6{ background:url("../images/mendianzhanshi/6.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/6.jpg*/ no-repeat center top;}
+.mendian7{ background:url("../images/mendianzhanshi/7.jpg")/*tpa=http://www.ysg.cn/templets/ysg/images/mendianzhanshi/7.jpg*/ no-repeat center top; height:173px;}
