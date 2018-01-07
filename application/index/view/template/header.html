@@ -6,7 +6,7 @@
     <meta name="description" content="{$config.description}" />
     <meta name="keywords" content="{$config.keyword}" />
     <link href="__STATIC__/css/css-new.css" rel="stylesheet" type="text/css" />
-    <link href="__STATIC__/css/index-news.css" rel="stylesheet" type="text/css" />
+
     <!--<script type="text/javascript" src="__STATIC__/js/jquery.js"></script>-->
     <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/javascript" src="__STATIC__/js/index.js"></script>
@@ -42,98 +42,39 @@
 <div class="menu">
     <div class="box1">
         <ul>
-            <li><a href="index.htm">首页</a></li>
-            <li class='' ><a href="guanyuwomen/index.htm">关于我们</a>
+            <li><a href="/">首页</a></li>
+            {foreach $topMenus as $menu}
+            <li class='menus' >
+                <a href="{:url($menu['pinyin'])}">{$menu.name}</a>
                 <div class="menu_xl xl1">
                     <div class="box1">
+                        {if condition = "isset( $menu['child'])"}
                         <ul>
-                            <li><a href="guanyuwomen/gstd/index.htm">公司团队</a></li>
-                            <li><a href="guanyuwomen/qywh/index.htm">企业文化</a></li>
-                            <li><a href="guanyuwomen/ccwl/index.htm">仓储物流</a></li>
-                            <li><a href="meiti/index.htm">合作媒体</a></li>
-                            <li><a href="news/index.htm">新闻中心</a></li>
-                            <li><a href="shengming/index.htm">版权声明</a></li>
+                            {foreach $menu['child'] as $item}
+                            <li><a href="{:url($item['pinyin'])}">{$item.name}</a></li>
+                            {/foreach}
                         </ul>
+                        {/if}
                     </div>
                 </div>
-            </li><li class='' ><a href="zhinan/index.htm">加盟指南</a>
-            <div class="menu_xl xl2">
-                <div class="box1">
-                    <ul>
-                        <li><a href="zhinan/xyys/index.htm">行业优势</a></li>
-                        <li><a href="zhinan/qspp/index.htm">强势品牌</a></li>
-                        <li><a href="zhinan/yxys/index.htm">营销优势</a></li>
-                        <li><a href="zhinan/zbzc/index.htm">总部支持</a></li>
-                        <li><a href="tiaojian/index.htm">加盟条件</a></li>
-                        <li><a href="yiwen/index.htm">加盟疑问</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="fangan/index.htm">加盟方案</a>
-            <div class="menu_xl xl1">
-                <div class="box1">
-                    <ul>
-                        <li><a href="fangan/two/index.htm"">时尚店</a></li>
-                        <li><a href="fangan/three/index.htm">豪华店</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="touzi/index.htm">投资开店</a>
-            <div class="menu_xl xl2">
-                <div class="box1">
-                    <ul>
-                        <li><a href="lirun/index.htm">利润分析</a></li>
-                        <li><a href="chengben/index.htm">成本费用</a></li>
-                        <li><a href="wenda/index.htm">开店问答</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="anli/index.htm">成功案例</a>
-            <div class="menu_xl xl1">
-                <div class="box1">
-                    <ul>
-                        <li><a href="fengcai/index.htm">加盟商风采</a></li>
-                        <li><a href="ganyan/index.htm">加盟商感言</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="products/index.htm">产品展示</a>
-            <div class="menu_xl xl2">
-                <div class="box1">
-                    <ul>
-                        <li><a href="products/fenlei/index.htm">产品分类</a></li>
-                        <li><a href="xinpin/index.htm">新品上线</a></li>
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="qiyenews/index.htm">企业新闻</a>
-            <div class="menu_xl xl1">
-                <div class="box1">
-                    <ul>
-
-                    </ul>
-                </div>
-            </div>
-        </li><li class='' ><a href="lianxi/index.htm">联系方式</a>
-            <div class="menu_xl xl2">
-                <div class="box1"><ul></ul></div>
-            </div>
-        </li>
+            </li>
+            {/foreach}
         </ul>
     </div>
 </div>
-<meta name="baidu-site-verification" content="wgHyfKiamh" />
+
+<!--<meta name="baidu-site-verification" content="wgHyfKiamh" />-->
 {block name="content"}{/block}
 
 <div class="footer_nav">
     <div class="box">
-        <a href="/" title="一扫光休闲食品加盟">网站首页</a>
-        <a href="guanyuwomen/index.htm"  title="关于我们">关于我们</a>
-        <a href="products/index.htm"  title="产品展示">产品展示</a>
-        <a href="lianxi/index.htm"  title="联系方式">联系方式</a>
-        <a href="map/index.htm"  title="网站地图">网站地图</a>
+        <a href="/" title="{$config.title}">网站首页</a>
+        {foreach $bottomMenus as $menu}
+        <a href="{$menu.pinyin}"  title="{$menu.name}">{$menu.name}</a>
+        {/foreach}
     </div>
 </div>
+
 <div class="footer">
     <div class="box">
         <div class="clearfix">
@@ -154,10 +95,10 @@
         </div>
     </div>
 </div>
-<script language="javascript" src="templets/ysg/js/swt2.js"></script>
-<div style="display:none;"><script src="../s11.cnzz.com/z_stat.php-id=1255392733&web_id=1255392733" language="JavaScript"></script>
+<!--<script language="javascript" src="templets/ysg/js/swt2.js"></script>-->
+<!--<div style="display:none;"><script src="../s11.cnzz.com/z_stat.php-id=1255392733&web_id=1255392733" language="JavaScript"></script>-->
 
-    <script type="text/javascript">
+<!--    <script type="text/javascript">
         var reg11 = "http://www.ysg.cn/ysg1717.cn";
         var reg22 = "http://www.ysg.cn/ysg1717.com";
         var reg33 = "http://www.ysg.cn/xxspjm.net";
@@ -230,11 +171,9 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         }
-
-    </script>
-
+    </script>-->
 </div>
-<script language="javascript" src="../swt.ysg.cn/JS/LsJS.aspx-siteid=KMM23720509&float=1&lng=cn"></script>
+<!--<script language="javascript" src="../swt.ysg.cn/JS/LsJS.aspx-siteid=KMM23720509&float=1&lng=cn"></script>-->
 </div>
 </body>
 </html>

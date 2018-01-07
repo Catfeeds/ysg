@@ -9994,6 +9994,7 @@ UE.plugins['defaultfilter'] = function () {
                     }
                     return;
                 }
+
                 switch (node.tagName) {
                     case 'style':
                     case 'script':

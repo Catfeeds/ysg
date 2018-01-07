@@ -101,4 +101,25 @@ class Upload extends Controller
 
         return ajax_return($ret);
     }
+
+    public function video()
+    {
+        return $this->view->fetch();
+    }
+
+    // 视频上传
+    public function uploadVideo()
+    {
+        $upload = \Qiniu::instance();
+        $info = $upload->upload('video/');
+        $error = $upload->getError();
+        $domain = Config::get('qiniu.domain');
+
+        if (! empty($error)) {
+            return ajax_return_error($error);
+        }
+
+        // 视频截图 url 拼接：?vframe/jpg/offset/10/w/320/h/180
+        return ajax_return(['name' => $domain . $info[0]['key']]);
+    }
 }

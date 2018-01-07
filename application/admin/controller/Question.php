@@ -11,5 +11,10 @@ class Question extends Controller
     // 方法黑名单
     protected static $blacklist = [];
 
-    
+    protected function filter(&$map)
+    {
+        if ($this->request->param("title")) {
+            $map['title'] = ["like", "%" . $this->request->param("title") . "%"];
+        }
+    }
 }

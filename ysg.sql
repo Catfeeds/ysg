@@ -76,6 +76,8 @@ create table tp_product_category(
     id int not null primary key auto_increment,
     title varchar(64) not null default '' comment '名称',
     pinyin varchar(128) not null default '' comment '拼音',
+    image varchar(512) not null DEFAULT  '' comment '图片',
+    image_hover varchar(512) not null DEFAULT  '' comment '切换图片',
     position tinyint not null default '1' comment '排序',
     enabled enum('Y', 'N') not null default 'Y' comment '是否显示，Y是',
     create_time int unsigned not null default '0' comment '创建时间',
@@ -236,3 +238,25 @@ create table tp_index_config(
     create_time int unsigned not null default '0' comment '创建时间',
     update_time int unsigned not null default '0' comment '修改时间'
 )engine = innodb default charset=utf8 comment = '首页配置';
+
+create table tp_feedback(
+    id int not null primary key auto_increment,
+    username VARCHAR(64) not null default '' comment '用户名',
+    telephone varchar(12) not null default '' comment '电话',
+    content varchar(1024) not null default '' comment '留言',
+    enabled enum('Y', 'N') not null default 'Y' comment '是否处理，Y是',
+    create_time int unsigned not null default '0' comment '创建时间',
+    update_time int unsigned not null default '0' comment '修改时间'
+)engine = innodb default charset=utf8 comment = '反馈留言';
+
+create table tp_join_plan(
+    id int not null primary key auto_increment,
+    title VARCHAR(64) not null default '' comment '方案名称',
+    image VARCHAR(512) not null DEFAULT '' comment '方案图片',
+    amount int not null DEFAULT '0' comment '资金，单位元',
+    advantage VARCHAR(512) not null DEFAULT '' comment '优势',
+    hot int not NULL  DEFAULT '5' comment '投资热度，1-5',
+    enabled enum('Y', 'N') not null default 'Y' comment '是否处理，Y是',
+    create_time int unsigned not null default '0' comment '创建时间',
+    update_time int unsigned not null default '0' comment '修改时间'
+)engine = innodb default charset=utf8 comment = '加盟方案';

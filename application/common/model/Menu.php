@@ -39,4 +39,18 @@ class Menu extends Model
 
         return $result;
     }
+
+    // 投资开店菜单
+    public function getInvestMenu()
+    {
+        $parentId = $this->where(['pinyin' => 'touzikaidian'])->value('id');
+        $result = $this->where([ 'enabled' => 'Y'])
+            ->where(['parent_id' => $parentId])
+            ->order('id ASC')
+            ->field(['id', 'name'])
+            ->select()
+            ->toArray();
+
+        return $result;
+    }
 }

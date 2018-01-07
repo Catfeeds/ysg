@@ -32,7 +32,21 @@
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">底部显示：</label>
+            <label class="form-label col-xs-3 col-sm-3">顶部导航显示：</label>
+            <div class="formControls col-xs-6 col-sm-6 skin-minimal">
+                <div class="radio-box">
+                    <input type="radio" name="is_top" id="is_top-0" value="Y">
+                    <label for="is_bottom-0">是</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" name="is_top" id="is_top-1" value="N" checked="checked">
+                    <label for="is_bottom-1">否</label>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3">底部导航显示：</label>
             <div class="formControls col-xs-6 col-sm-6 skin-minimal">
                 <div class="radio-box">
                     <input type="radio" name="is_bottom" id="is_bottom-0" value="Y">
@@ -81,6 +95,7 @@
 <script>
     $(function () {
         var parentId = "{$vo.parent_id ?? 0}";
+        $("[name='is_top'][value='{$vo.is_top == 'Y' ?? 'Y'}']").prop("checked", true);
         $("[name='is_bottom'][value='{$vo.is_bottom == 'Y' ?? 'N'}']").prop("checked", true);
         $("[name='enabled'][value='{$vo.enabled == 'N' ?? 'Y'}']").prop("checked", true);
         $("[name='parent_id']").find("[value='"+parentId+"']").attr("selected", true);

@@ -90,7 +90,7 @@ a:hover{ color:#bd0000;}
 .menu ul li{ float:left;}
 .menu ul li a{ padding:0 14px; float:left; color:#fff; line-height:45px; font-size:15px; font-weight:bold;}
 .menu ul li a:hover,.menu ul li.menuhover a,.menu ul li.dq a,.menu ul li.xl a{ background:url("../images/menu_hover.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_hover.jpg*/ repeat-x;}
-.menu>.box1>ul>li:last-child{ display:none;}
+/*.menu>.box1>ul>li:last-child{ display:none;}*/
 .menu_xl{ display:none;}
 .menu ul li.xl .menu_xl{ display:block; position:absolute; left:0; top:45px; width:100%; z-index:928; background:url("../images/menu_xl.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_xl.png*/ repeat-x; height:44px; line-height:40px; font-size:14px;}
 .nava{ z-index:998; background:url("../images/menu_xl.png")/*tpa=http://www.ysg.cn/templets/ysg/style/images/menu_xl.png*/ repeat-x; height:40px; line-height:40px; font-size:14px;}

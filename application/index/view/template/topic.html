@@ -1,0 +1,10 @@
+{extend name="template/header" /}
+{block name="content"}
+<!--二级菜单 End-->
+<div class="weizhi-xian" style="margin-top:30px">
+    <div class="weizhi box">当前位置：<a href="/">主页</a> > <a href="{:url($topic['pinyin'])}">{$topic.name}</a></div>
+</div>
+<div class="topic">
+    {$topic.content|htmlspecialchars_decode}
+</div>
+{/block}
