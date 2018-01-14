@@ -1,0 +1,24 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/app.css"  rel="stylesheet" type="text/css" />
+<div class="weizhi">当前位置：<a href="/">首页</a> &gt; <b><a href="/">利润分析</a></b></div>
+
+<article>
+    <div class="news_list">
+        <ul>
+            {foreach $list as $item}
+            <li>
+                <a href="{:url('index/lirunDetail', ['id'=>$item['id']])}" ><img src="{$item.image}"/></a>
+                <strong><a href="{:url('index/lirunDetail', ['id'=>$item['id']])}"><b>{$item.title}</b></a></strong>
+                <p>{$item.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,60,'utf-8'}...</p>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+
+    <div class="page-bootstrap">
+        {$list->render()}
+    </div>
+
+</article>
+{/block}

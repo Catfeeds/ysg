@@ -1,5 +1,6 @@
 {extend name="template/header" /}
 {block name="content"}
+<link href="__STATIC__/css/index-news.css" rel="stylesheet" type="text/css" />
 <!-- 幻灯片 Start -->
 <div style="z-index:-9; height:auto; overflow:hidden;">
 	<div class="flexslider">
@@ -16,7 +17,7 @@
         </ul>
     </div>
 </div>
-
+<script src="https://cdn.bootcss.com/html5media/1.1.8/html5media.min.js"></script>
 <script src="__STATIC__/js/jquery.flexslider-min.js"></script>
 <script>
 
@@ -34,105 +35,97 @@ $(function(){
 <!-- 幻灯片 End --> 
 
 </div>
+
+{if condition="count($menus) > 0 "}
 <div class="box4 quick_nav m25">
 	<ul>
         {foreach $menus as $item}
 		<li>
-			<div class="img_show"><a href="todo" target="_blank"><img src="{$item.image}" alt=""></a></div>
-			<div class="tit"><a href="todo" target="_blank"><i class="icon1" style="width: 30px;height: 30px;margin-right: 5px;display: inline-block;background: url({$item.icon}) no-repeat;vertical-align: text-bottom;"></i>{$item.name}</a></div>
+			<div class="img_show"><a href="{:url('index/index/' . $item['pinyin'])}" target="_blank"><img src="{$item.image}" alt=""></a></div>
+			<div class="tit"><a href="{:url('index/index/' . $item['pinyin'])}" target="_blank"><i class="icon1" style="width: 30px;height: 30px;margin-right: 5px;display: inline-block;background: url({$item.icon}) no-repeat;vertical-align: text-bottom;"></i>{$item.name}</a></div>
 		</li>
         {/foreach}
 
 	</ul>
 </div>
+{/if}
 
-
+{if condition="isset($videos[0])"}
 <div class="box clearfix m25">
 <!--媒体报道-->
 	<div class="in_news1 left">
-		<h2 class="title"><strong><a href="meiti/index.htm" target="_blank">媒体报道</a></strong><a href="baodao/index.htm" class="more" target="_blank">更多+</a></h2>
+		<h2 class="title"><strong><a href="{:url('index/index/qiyexinwen')}" target="_blank">媒体报道</a></strong><a href="{:url('index/index/qiyexinwen')}" class="more" target="_blank">更多+</a></h2>
         <div class="shipin">
-        <embed src="../player.letvcdn.com/lc07_p/201706/08/09/43/0945/newplayer/bcloud.swf-" allowfullscreen="true" quality="high" align="middle" allowscriptaccess="always" width="285" height="190" wmode="transparent" flashvars="uu=29def2a1d5&vu=7bc43c750d&auto_play=0&gpcflag=1&width=640&height=360&lang=zh_CN" type="application/x-shockwave-flash"></embed>
+            <video src="{$videos[0]['url']}" width="285" height="220"  controls autobuffer></video>
+        <!--<embed src="../player.letvcdn.com/lc07_p/201706/08/09/43/0945/newplayer/bcloud.swf-" allowfullscreen="true" quality="high" align="middle" allowscriptaccess="always" width="285" height="190" wmode="transparent" flashvars="uu=29def2a1d5&vu=7bc43c750d&auto_play=0&gpcflag=1&width=640&height=360&lang=zh_CN" type="application/x-shockwave-flash"></embed>-->
     </div>
-	<p class="in_news1-bt">一扫光休闲食品加盟携手央视亮相《中国合伙人》</p>
+	<p class="in_news1-bt">{$videos[0]['title']}</p>
 </div>
-        
+{/if}
         
 <!--最新活动-->
+    {if condition="count($news) > 0"}
 	<div class="in_news1 in_news left">
-		<h2 class="title"><strong><a href="qiyenews/index.htm" target="_blank">最新活动</a></strong><a href="qiyenews/index.htm" class="more" target="_blank">更多+</a></h2>
+		<h2 class="title"><strong><a href="{:url('index/index/qiyexinwen')}" target="_blank">最新活动</a></strong><a href="{:url('index/index/qiyexinwen')}" class="more" target="_blank">更多+</a></h2>
 		<dl>
-            <dt><a href="qiyenews/2501.html"><img src="uploads/allimg/171130/1-1G1301G1362T-lp.jpg" alt="一扫光零食店加盟：一个单亲妈妈的创业故事" title="一扫光零食店加盟：一个单亲妈妈的创业故事" width="70px" height="70px"></a></dt>
-            <dd> <strong><a href="qiyenews/2501.html" title="一扫光零食店加盟：一个单亲妈妈的创业故事" target="_blank">一扫光零食店加盟：一个单亲妈妈的创业故事</a></strong>
-                <p>在近几年的创业大军中，有不少女性投资者，在如今男女平等的时代，女性朋友参与创业的不在少数。在我们的日常...<a href="qiyenews/2501.html" title="一扫光零食店加盟：一个单亲妈妈的创业故事" target="_blank">详情>></a></p>
+            <dt><a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}">
+                <img src="{$news[0]['image']}" alt="{$news[0]['title']}" title="{$news[0]['title']}" width="70px" height="70px"></a></dt>
+            <dd> <strong><a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}" title="{$news[0]['title']}" target="_blank">{$news[0]['title']||mb_substr=###,0,17,'utf-8'}</a></strong>
+                <p>{$news[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8'}...<a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}" title="{$news[0]['title']}" target="_blank">详情>></a></p>
             </dd>
 		</dl>
+        {if condition="count($news) > 1"}
 		<ul>
+            {foreach $news as $key => $item}
+            {if condition="$key > 0"}
             <li>
-                <em>2017-11-28</em><a href="qiyenews/2497.html" title="一扫光零食店加盟，助你轻轻松松赢得事业上的成功" target="_blank">一扫光零食店加盟，助你轻轻松松赢得事业上的成功</a>
+                <em>{$item.create_time|date="Y-m-d", ###}</em><a href="{:url('index/index/detail',['id'=>$item['id']])}" title="{$item.title}" target="_blank">{$item.title}</a>
             </li>
-            <li>
-                <em>2017-11-24</em><a href="qiyenews/2493.html" title="一扫光零食店加盟，给我的生活带来了大逆转" target="_blank">一扫光零食店加盟，给我的生活带来了大逆转</a>
-            </li>
-            <li>
-                <em>2017-11-21</em><a href="qiyenews/2488.html" title="投资创业好商机，一扫光休闲食品加盟投资好项目" target="_blank">投资创业好商机，一扫光休闲食品加盟投资好项目</a>
-            </li>
-            <li>
-                <em>2017-11-17</em><a href="qiyenews/2485.html" title="一扫光分享零食店加盟选址小技巧，创业者不能不看" target="_blank">一扫光分享零食店加盟选址小技巧，创业者不能不看</a>
-            </li>
-            <li>
-                <em>2017-11-15</em><a href="qiyenews/2481.html" title="一扫光专业解答：零食店加盟怎么才能收获成功？" target="_blank">一扫光专业解答：零食店加盟怎么才能收获成功？</a>
-            </li>
+            {/if}
+            {/foreach}
         </ul>
+        {/if}
 	</div>
-         
-  <!--一扫光企业形象宣传片-->        
+       {/if}
+
+  <!--一扫光企业形象宣传片-->
+    {if condition="isset($videos[1])"}
 <div class="in_news1 right" style="margin-right:0;">
 	<h2 class="title"><strong><a href="javascript:void(0);" target="_blank">一扫光企业形象宣传片</a></strong></h2>
     <div class="shipin1">
-        <embed src="../player.letvcdn.com/lc07_p/201706/08/09/43/0945/newplayer/bcloud.swf-" allowfullscreen="true" quality="high" align="middle" allowscriptaccess="always" width="285" height="220" wmode="transparent" flashvars="uu=29def2a1d5&vu=bb417f2c59&auto_play=1&gpcflag=1&width=267&height=170&lang=zh_CN" type="application/x-shockwave-flash"></embed>
+        <video src="{$videos[1]['url']}" width="285" height="220"  controls autobuffer></video>
+        <!--<embed src="../player.letvcdn.com/lc07_p/201706/08/09/43/0945/newplayer/bcloud.swf-" allowfullscreen="true" quality="high" align="middle" allowscriptaccess="always" width="285" height="220" wmode="transparent" flashvars="uu=29def2a1d5&vu=bb417f2c59&auto_play=1&gpcflag=1&width=267&height=170&lang=zh_CN" type="application/x-shockwave-flash"></embed>-->
     </div>
     </div>
 </div>
-
+{/if}
 
 <!--加盟方案-->
 <div class="box4 m25">
 	<div class="common_hd">
-		<div class="tit"><img src="templets/ysg/style/images/index/jmfa.png" alt="加盟方案"></div>
+		<div class="tit"><img src="__STATIC__/images/index/jmfa.png" alt="加盟方案"></div>
 		<!--<div class="info">超强实力认证  引领行业高度</div>-->
-		<div class="more"><a href="javascript:void(0)" onclick="online()"><img src="templets/ysg/style/images/index/index_ask_btn.gif" alt="立即在线咨询"></a></div>
+		<div class="more"><a href="javascript:void(0)" onclick="online()"><img src="__STATIC__/images/index/index_ask_btn.gif" alt="立即在线咨询"></a></div>
 	</div>
+    {foreach $plans as $plan}
     <div class="programme">
     	<dl>
-        	<dt><a href="fangan/two/index.htm"><img src="templets/ysg/style/images/index/fanan1.jpg" alt="时尚店方案"></a></dt>
+        	<dt><a href="todo"><img src="{$plan.image}" alt="{$plan.title}方案"></a></dt>
             <dd>
-            	<strong><a href="fangan/two/index.htm">时尚店方案</a></strong>
-                <span><i>加盟资金：</i><em>85650元</em></span>
-                <span>投资优势：客源大、回报高</span>
-                <span><i>投资热度：</i><div class="xing4 png">★★★★</div></span>
+            	<strong><a href="fangan/two/index.htm">{$plan.title}方案</a></strong>
+                <span><i>加盟资金：</i><em>{$plan.amount}</em></span>
+                <span>投资优势：{$plan.advantage}</span>
+                <span><i>投资热度：</i><div class="xing4 png">{$plan.hot|str_repeat='★', ###}</div></span>
                 <a href="javascript:void(0)" onclick="online()" class="btn1 png" target="_blank">在线咨询</a>
                 <a href="javascript:void(0)" onclick="online()" class="btn2 png" target="_blank">申请加盟</a>
             </dd>
         </dl>
     </div>
-    <div class="programme">
-    	<dl>
-        	<dt><a href="fangan/three/index.htm" ><img src="templets/ysg/style/images/index/fanan2.jpg" alt="豪华店方案"></a></dt>
-            <dd>
-            	<strong><a href="fangan/three/index.htm">豪华店方案</a></strong>
-                <span><i>加盟资金：</i><em>122600元</em></span>
-                <span>投资优势：档次高、效益好</span>
-                <span><i>投资热度：</i><div class="xing4 png">★★★★★</div></span>
-                <a href="javascript:void(0)" onclick="online()" class="btn1 png" target="_blank">在线咨询</a>
-                <a href="javascript:void(0)" onclick="online()" class="btn2 png" target="_blank">申请加盟</a>
-            </dd>
-        </dl>
-    </div>
+    {/foreach}
 </div>
 
 <!--公司实力-->
-
+{if condition="count($strength) > 0"}
 <div class="box4 m25">
     <a href="todo">
 	    <div class="common_hd">
@@ -162,23 +155,25 @@ $(function(){
             {/foreach}
       </div>
     </div>
-<script>
-	
-//首页排行榜
-$('.index_jm_cont .index_jm_list').eq(0).show().siblings().hide();
-$('.index_jm_tab > ul >li').first().addClass('on');
-$('.index_jm_tab').each(function(){
-	$('.index_jm_tab > ul >li').hover(function(){
-		$(this).addClass('on').siblings().removeClass('on');
-		$('.index_jm_cont .index_jm_list').eq($(this).index()).show().siblings().hide();
-	}).eq(0).hover();
-});
+    <script>
+
+    //首页排行榜
+    $('.index_jm_cont .index_jm_list').eq(0).show().siblings().hide();
+    $('.index_jm_tab > ul >li').first().addClass('on');
+    $('.index_jm_tab').each(function(){
+        $('.index_jm_tab > ul >li').hover(function(){
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.index_jm_cont .index_jm_list').eq($(this).index()).show().siblings().hide();
+        }).eq(0).hover();
+    });
 
 
-</script>
+    </script>
 </div>
+{/if}
 
 <!--公司文化-->
+{if condition = "count($culture) > 0" }
 <div class="box4 m25">
     <a href="todo">
 	<div class="common_hd">
@@ -195,8 +190,10 @@ $('.index_jm_tab').each(function(){
         </ul>
     </div>
 </div>
+{/if}
 
 <!--强势品牌-->
+{if condition = "count($brandImages) > 0" }
 <div class="box4 m25">
     <a href="todo">
     	<div class="common_hd">
@@ -216,78 +213,54 @@ $('.index_jm_tab').each(function(){
         {/foreach}
     </div>
 </div>
+{/if}
 
 <!--13+1大类产品，1000多款畅销单品-->
+{if condition="$index.products_title != '' "}
 <div class="box4 m25">
-	<div class="cp-title"><strong><a href="todo" target="_blank">{$index.products_title}</a></strong><a href="todo" class="more" target="_blank">产品类别>></a><a href="products/index.htm" class="more" target="_blank">新品上线>></a></div>
-    <div class="cp-box"><a href="todo" title="{$index.products_title}"><img src="{$index.products_logo}" alt="{$index.products_title}"></a></div>
+	<div class="cp-title"><strong><a href="{:url('index/index/chanpinzhanshi')}" target="_blank">{$index.products_title}</a></strong><a href="todo" class="more" target="_blank">产品类别>></a><a href="products/index.htm" class="more" target="_blank">新品上线>></a></div>
+    <div class="cp-box"><a href="{:url('index/index/chanpinzhanshi')}" title="{$index.products_title}"><img src="{$index.products_logo}" alt="{$index.products_title}"></a></div>
 </div>
+{/if}
 
 <!-- 新闻中心-->
+
 <div class="box clearfix m25">
 <!--利润分析-->
-	<div class="in_news1 in_news left">
-		<h2 class="title"><strong><a href="#" target="_blank">利润分析</a></strong><a href="lirun/index.htm" class="more" target="_blank">更多+</a></h2>
-		<dl>
-            <dt><a href="lirun/2502.html"><img src="uploads/allimg/171130/1-1G1301I234223-lp.jpg" alt="休闲食品加盟品牌，实地考察需要注意的几个方面" title="休闲食品加盟品牌，实地考察需要注意的几个方面" width="70px" height="70px"></a></dt>
-            <dd> <strong><a href="lirun/2502.html" title="休闲食品加盟品牌，实地考察需要注意的几个方面" target="_blank">休闲食品加盟品牌，实地考察需要注意的几个方面</a></strong>
-                <p>当投资者在考察零食加盟品牌的时候，不能光看网上的评论，要知道现如今网络言论自由，不排除有恶意竞争的现象...<a href="lirun/2502.html" title="休闲食品加盟品牌，实地考察需要注意的几个方面" target="_blank">详情>></a></p>
-            </dd>
+    {foreach $investMenu as $k => $imenu}
+    {if condition="$k == 2"}
+        <div class="in_news1 in_news right" style="margin-right:0;">
+    {else /}
+        <div class="in_news1 in_news left">
+    {/if}
 
-		</dl>
-		<ul>
-            <li><em>2017-11-28</em><a href="lirun/2498.html" title="一扫光休闲食品加盟，全国“零加盟费”，全程扶持投资者创业" target="_blank">一扫光休闲食品加盟，全国“零加盟费”，全程扶持投资者创业</a></li>
-            <li><em>2017-11-24</em><a href="lirun/2494.html" title="零食店加盟10大品牌，一扫光无忧创业" target="_blank">零食店加盟10大品牌，一扫光无忧创业</a></li>
-            <li><em>2017-11-22</em><a href="lirun/2490.html" title="一扫光零食店加盟，百里挑一创业好项目" target="_blank">一扫光零食店加盟，百里挑一创业好项目</a></li>
-            <li><em>2017-11-20</em><a href="lirun/2487.html" title="一扫光解析创业成本：投资休闲食品加盟店成本高吗？" target="_blank">一扫光解析创业成本：投资休闲食品加盟店成本高吗？</a></li>
-            <li><em>2017-11-16</em><a href="lirun/2483.html" title="零食店加盟选择一扫光，小店面成大事业" target="_blank">零食店加盟选择一扫光，小店面成大事业</a></li>
-        </ul>
-	</div>
-        
-        
-<!--成本费用-->
-	<div class="in_news1 in_news left">
-		<h2 class="title"><strong><a href="#" target="_blank">成本费用</a></strong><a href="chengben/index.htm" class="more" target="_blank">更多+</a></h2>
-		<dl>
-			<dt><a href="chengben/2500.html"><img src="uploads/allimg/171129/1-1G1291G21Q42-lp.JPG" alt="投资零食店加盟项目，选择品牌实力居高的一扫光" title="投资零食店加盟项目，选择品牌实力居高的一扫光" width="70px" height="70px"></a></dt>
-            <dd> <strong><a href="chengben/2500.html" title="投资零食店加盟项目，选择品牌实力居高的一扫光" target="_blank">投资零食店加盟项目，选择品牌实力居高的一扫光</a></strong>
-                <p>随着经济不断提高，休闲零食走进了全国的千家万户。各式各样的零食种类，满足了人们日常的需求。一扫光 零食店...<a href="chengben/2500.html" title="投资零食店加盟项目，选择品牌实力居高的一扫光" target="_blank">详情>></a></p>
-            </dd>
+            <h2 class="title"><strong><a href="#" target="_blank">{$imenu.name}</a></strong><a href="{:url('index/index/' . $imenu['pinyin'])}" class="more" target="_blank">更多+</a></h2>
+            {if condition="isset( $invests[$imenu['pinyin']][0])" }
+                <dl>
+                    <dt><a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}"><img src="{$invests[$imenu['pinyin']][0]['image']}" alt="{$invests[$imenu['pinyin']][0]['title']}" title="{$invests[$imenu['pinyin']][0]['title']}" width="70px" height="70px"></a></dt>
+                    <dd> <strong><a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}" title="{$invests[$imenu['pinyin']][0]['title']}" target="_blank">{$invests[$imenu['pinyin']][0]['title']}</a></strong>
+                        <p>{$invests[$imenu['pinyin']][0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8' }...<a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}" title="" target="_blank">详情>></a></p>
+                    </dd>
 
-		</dl>
-		<ul>
-			<li><em>2017-11-27</em><a href="chengben/2496.html" title="休闲食品加盟哪家好？一扫光零食量贩实力强" target="_blank">休闲食品加盟哪家好？一扫光零食量贩实力强</a></li>
-            <li><em>2017-11-23</em><a href="chengben/2492.html" title="影响一家零食店加盟销量的因素有哪些？" target="_blank">影响一家零食店加盟销量的因素有哪些？</a></li>
-            <li><em>2017-11-21</em><a href="chengben/2489.html" title="零食店加盟选择哪个品牌更好？一扫光专业品牌造就行业“高峰”" target="_blank">零食店加盟选择哪个品牌更好？一扫光专业品牌造就行业“高峰”</a></li>
-            <li><em>2017-11-17</em><a href="chengben/2484.html" title="开一家一扫光进口食品加盟店怎么样？" target="_blank">开一家一扫光进口食品加盟店怎么样？</a></li>
-            <li><em>2017-11-15</em><a href="chengben/2480.html" title="一扫光休闲食品加盟十大品牌，投资创业不二之选" target="_blank">一扫光休闲食品加盟十大品牌，投资创业不二之选</a></li>
-        </ul>
-	</div>
-        
-        
-<!--开店问答-->        
-<div class="in_news1 in_news right" style="margin-right:0;">
-	<h2 class="title"><strong><a href="#" target="_blank">开店问答</a></strong><a href="wenda/index.htm" class="more" target="_blank">更多+</a></h2>
-	<dl>
-		<dt><a href="wenda/2499.html"><img src="uploads/allimg/171129/1-1G1291A03B11-lp.jpg" alt="经营一家休闲食品加盟店需要注意哪些方面？" title="经营一家休闲食品加盟店需要注意哪些方面？" width="70px" height="70px"></a></dt>
-        <dd> <strong><a href="wenda/2499.html" title="经营一家休闲食品加盟店需要注意哪些方面？" target="_blank">经营一家休闲食品加盟店需要注意哪些方面？</a></strong>
-            <p>休闲零食行业如今庞大的消费群体，对于投资者来说无疑是个创业的好时机。因此，中小投资者纷纷转向 休闲食品加...<a href="wenda/2499.html" title="经营一家休闲食品加盟店需要注意哪些方面？" target="_blank">详情>></a></p>
-        </dd>
-    </dl>
-	<ul>
-		<li><em>2017-11-27</em><a href="wenda/2495.html" title="一扫光丰富经验分享：投资零食店加盟需要注意几大方面" target="_blank">一扫光丰富经验分享：投资零食店加盟需要注意几大方面</a></li>
-        <li><em>2017-11-23</em><a href="wenda/2491.html" title="开家休闲食品加盟店，门店选址有学问" target="_blank">开家休闲食品加盟店，门店选址有学问</a></li>
-        <li><em>2017-11-20</em><a href="wenda/2486.html" title="零食店加盟哪个品牌好？一扫光零食行业专业品牌" target="_blank">零食店加盟哪个品牌好？一扫光零食行业专业品牌</a></li>
-        <li><em>2017-11-16</em><a href="wenda/2482.html" title="休闲食品加盟品牌哪个好？一扫光高品质零食的典范" target="_blank">休闲食品加盟品牌哪个好？一扫光高品质零食的典范</a></li>
-        <li><em>2017-11-13</em><a href="wenda/2478.html" title="投资零食店加盟，选一扫光做个成功的创业者" target="_blank">投资零食店加盟，选一扫光做个成功的创业者</a></li>
-    </ul>
-</div>
+                </dl>
+            {/if}
+            <ul>
+                {foreach $invests[$imenu['pinyin']] as $kk => $invest}
+                <?php if ($kk == 0) {continue;} ?>
+                <li><em>{$invest.create_time|date='Y-m-d', ###}</em><a href="{:url('index/index/touzidetail', ['id'=>$invest['id']])}" title="{$invest.title}" target="_blank">{$invest.title}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+    {/foreach}
+
 </div>
 
+
+{if condition="count($service) > 0"}
 <!--加盟服务-->
 <div class="box4 m25">
 	<div class="common_hd">
-		<div class="tit"><a href="todo"><img src="__STATIC__/images/index/jmfw.png" alt="加盟服务"></a></div>
+		<div class="tit"><a href="{:url('index/index/yingxiaoyoushi')}"><img src="__STATIC__/images/index/jmfw.png" alt="加盟服务"></a></div>
 		<div class="info">{$index.service_title}</div>
 		<div class="more"><a href="javascript:void(0)" onclick="online()"><img src="__STATIC__/images/index/index_ask_btn.gif" alt="立即在线咨询"></a></div>
 	</div>
@@ -296,14 +269,16 @@ $('.index_jm_tab').each(function(){
     	<dl>
         	<dt>{$index.service_subtitle|htmlspecialchars_decode}</dt>
             {foreach $service as $item}
-            <dd><a href="todo" title="加盟服务"><img src="{$item.image}" alt="加盟服务"></a></dd>
+            <dd><a href="{:url('index/index/yingxiaoyoushi')}" title="加盟服务"><img src="{$item.image}" alt="加盟服务"></a></dd>
             {/foreach}
         </dl>
     </div>
     
-    <div class="jmfw-zx"><a href="javascript:void(0)" onclick="online()"><img src="{$index.service_logo}" alt="一扫光财富项目一次投入 多倍利润 咨询加盟详情"></a></div>
+    <div class="jmfw-zx"><a href="javascript:void(0)" onclick="online()"><img src="{$index.service_logo}" alt="多倍利润 咨询加盟详情"></a></div>
 </div>
+{/if}
 
+{if condition="$join == 1"}
 <!--加盟案例-->
 <div class="box4 m25">
 	<div class="common_hd">
@@ -315,58 +290,27 @@ $('.index_jm_tab').each(function(){
     <div class="jmal">
     	<dl>
         	<dt>{$index.join_subtitle|htmlspecialchars_decode}</dt>
+            {foreach $fengcais as $item}
             <dd>
                 <div class="tabbox dingwei"> 
-                    <a href="fengcai/385.html" ><img src="uploads/allimg/170323/1-1F32310441N40-lp.jpg" alt="一扫光休闲食品加盟带来成功和财富">
-                        <div class="tabtext">一扫光休闲食品加盟带来成功和财富</div>
+                    <a href="{:url('index/index/ganyandetail', ['id'=>$item['id']])}" >
+                        <img src="{$item.image}" alt="{$item.title}">
+                        <div class="tabtext">{$item.title}</div>
                     </a>
                 </div>
             </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="fengcai/367.html" ><img src="uploads/allimg/170323/1-1F323105520142-lp.jpg" alt="零食加盟店投资一扫光轻松月入十万"><div class="tabtext">零食加盟店投资一扫光轻松月入十万</div></a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="fengcai/368.html" ><img src="uploads/allimg/170320/1-1F320162505929-lp.jpg" alt="投资一扫光零食加盟店成功就此起航"><div class="tabtext">投资一扫光零食加盟店成功就此起航</div> </a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="fengcai/384.html" ><img src="uploads/allimg/170320/1-1F320162313219-lp.jpg" alt="休闲食品加盟一扫光赚钱多又多"><div class="tabtext">休闲食品加盟一扫光赚钱多又多</div></a>
-                </div>
-            </dd>
+            {/foreach}
+
+            {foreach $ganyans as $item}
             <dd>
                 <div class="tabbox dingwei">
-                    <a href="fengcai/341.html" ><img src="uploads/allimg/170320/1-1F320162123253-lp.jpg" alt="一扫光零食店成就财富梦想"><div class="tabtext">一扫光零食店成就财富梦想</div></a>
+                    <a href="{:url('index/index/ganyandetail', ['id'=>$item['id']])}" >
+                        <img src="{$item.image}" alt="{$item.title}">
+                        <div class="tabtext">{$item.title}</div>
+                    </a>
                 </div>
             </dd>
-            <dd>
-                <div class="tabbox dingwei">
-                    <a href="ganyan/362.html" ><img src="uploads/allimg/170324/1-1F324111ZQY-lp.JPG" alt="投资零食店加盟当老板活出精彩"><div class="tabtext">投资零食店加盟当老板活出精彩</div></a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="ganyan/346.html" ><img src="uploads/allimg/170323/1-1F323104643612-lp.jpg" alt="一扫光零食店加盟月入十万不是梦"><div class="tabtext">一扫光零食店加盟月入十万不是梦</div></a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="ganyan/156.html" ><img src="uploads/allimg/170320/1-1F3201GQ9E0-lp.jpg" alt="开休闲食品店如何提高效益？"><div class="tabtext">开休闲食品店如何提高效益？</div></a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="ganyan/157.html" ><img src="uploads/allimg/170320/1-1F3201GI5240-lp.jpg" alt="休闲食品品牌如何选择好的？"><div class="tabtext">休闲食品品牌如何选择好的？</div></a>
-                </div>
-            </dd>
-            <dd>
-                <div class="tabbox dingwei"> 
-                    <a href="ganyan/361.html" ><img src="uploads/allimg/170320/1-1F3201G503393-lp.jpg" alt="零食店加盟一扫光改变我的一生"><div class="tabtext">零食店加盟一扫光改变我的一生</div></a>
-                </div>
-            </dd>
+            {/foreach}
         </dl>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -378,4 +322,5 @@ $('.index_jm_tab').each(function(){
     </script>
     </div>
 </div>
+{/if}
 {/block}

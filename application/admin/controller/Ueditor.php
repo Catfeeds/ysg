@@ -154,6 +154,9 @@ class Ueditor
      */
     public function uploadVideo()
     {
+        // php.ini设置
+        // upload_max_filesize = 8m ;
+        // post_max_size = 8m ;
         return $this->upload("video/", 3);
     }
 

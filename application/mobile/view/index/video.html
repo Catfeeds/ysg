@@ -1,0 +1,14 @@
+{extend name="template/header" /}
+{block name="content"}
+<div class="weizhi">当前位置：<a href="/">首页</a> &gt; <b><a href="/">企业宣传视频</a></b></div>
+<article>
+    <div class="cctv_box">
+        <div class="video">
+            <div class="box">
+                <video src="{$video['url']}" width="250" height="160"  controls autobuffer></video>
+            </div>
+        </div>
+        <div class="xj-zx"><a href="javascript:void(0);" onclick="online()">领取加盟资料</a><a class="xj_ic1" href="javascript:void(0);" onclick="online()">免费咨询加盟</a></div>
+    </div>
+</article>
+{/block}

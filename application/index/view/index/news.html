@@ -1,0 +1,25 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/news.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/css/app.css"  rel="stylesheet" type="text/css" />
+<div class="weizhi" style="margin-top:30px;">当前位置： <a href="/">主页</a> > <a href="#">企业新闻</a> </div>
+<div class="box" style="background-color:#fff;">
+    <div class="news_list">
+        <ul>
+            {foreach $newsList as $item}
+            <li>
+                <a href="{:url('index/index/detail', ['id' => $item['id']])}" target="_blank">
+                    <img src="{$item.image}" width="190" height="130" alt="{$item.title}"/>
+                </a>
+                <strong><em>{$item.create_time|date='Y-m-d H:i', ###}</em><a href="{:url('index/index/detail', ['id' => $item['id']])}">【新闻中心】<b>{$item.title}</b></a></strong>
+                <p>{$item.content|htmlspecialchars_decode|strip_tags|mb_substr=###, 0, 100, 'utf-8'}...<a href="{:url('index/index/detail', ['id' => $item['id']])}">[详情>>]</a></p>
+                <!--<span><b>标签</b></span>-->
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="page-bootstrap">
+        {$newsList->render()}
+    </div>
+</div>
+{/block}

@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>{$config.title}</title>
+        <meta name="description" content="{$config.description}" />
+        <meta name="keywords" content="{$config.keyword}" />
+        <link href="__STATIC__/css/css.css" rel="stylesheet"/>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <!--<script src="__STATIC__/js/index.js"></script>-->
+        <script src="__STATIC__/js/hhSwipe.js"></script>
+    </head>
+<body>
+
+<div class="viewport">
+    {if condition="$showTop == 1"}
+    <header class="header">
+        <div class="logo1">
+            <img src="{$config.brand_logo}" alt=""/>
+        </div>
+        <aside>
+            <a href="javascript:void(0)" class="opennav">导航</a>
+            <a href="javascript:history.go(-1)"  class="fhui">返回</a>
+        </aside>
+    </header>
+    <nav class="h_nav">
+        <ul>
+            <li><a href="/">首 页</a></li>
+            {foreach $topMenus as $item}
+            <li><a href="{:url('index/' . $item['pinyin'])}">{$item.name}</a></li>
+            {/foreach}
+        </ul>
+    </nav>
+    {/if}
+
+    {block name="content"}{/block}
+
+    <footer class="footer">
+        <p>{$config.company} 版权所有 </p>
+        <p>电话：{$config.mobile} </p>
+        <p>备案号：{$config.icp}</p>
+        <p>地址:{$config.address} </p>
+    </footer>
+
+    <aside class="fix_btn">
+        <a href="tel:{$config.mobile}"><i>电话咨询</i></a>
+        <a href="javascript:void(0);" onclick="online()"><i>在线咨询</i></a>
+        <a href="javascript:void(0)"><i>我要留言</i></a>
+    </aside>
+
+    <!--<script type="text/javascript" src="__STATIC__/js/swt.js"></script>-->
+    <!--<script type="text/javascript" src="__STATIC__/js/share.js"></script>-->
+
+</div>
+
+<div id="k_s_ol_inviteWin" class="ks_ol_comm_div" style="display: block; width: auto; z-index: 2147483647; left: 50%; margin-left: -150px; top: 50%; margin-top: -150px; visibility: visible; font-family: &quot;Microsoft YaHei&quot;; line-height: 22px; position: fixed !important;">
+    <div id="k_s_ol_inviteWin_fl">
+        <div style="width:300px; height:300px; background:url(http://www.ganxi.cn/js/boxbj.png) top center no-repeat; background-size:300px auto;" align="center">
+            <div align="right">
+                <div style="height:40px; width:40px; cursor:pointer;" onclick="closed()"></div>
+            </div>
+            <div style="padding-top:20px; text-align:center; font-size:14px; color:#444444;">
+                <p>在线咨询一扫光零食量贩</p>
+                <p>一对一专属服务</p>
+            </div>
+            <div style="padding-top:5px; padding-left:20px; line-height:32px; padding-right:20px; text-align:center; font-size:16px; font-weight:bold; color:#f4751e;">品牌优势&nbsp;&nbsp;加盟费用&nbsp;&nbsp;近期优惠</div>
+            <form  method="post">
+                <div style="padding-top:10px;" align="center">
+                    <div align="center">
+                        <input id="content2" name="content" value="请快速免费回电!" type="hidden">
+                        <input name="username" class="bjname" id="nb_nodeboard_set_name" value="" placeholder="姓名" style="font-family: Microsoft YaHei; font-size:14px; background:#ffffff; color:#555555; text-indent:10px;width:200px; height:32px; border:1px solid #9a9a9a; line-height:32px; border-radius:4px; outline:none; margin-bottom:5px;">
+                        <input name="iphone" type="text" id="nb_nodeboard_set_phone" style="font-family: Microsoft YaHei; font-size:14px; background:#ffffff; color:#555555; text-indent:10px;width:200px; height:32px; border:1px solid #9a9a9a; line-height:32px; border-radius:4px; outline:none;" value="" placeholder="手机">
+                        <textarea name="bd_bp_messText" style="display:none;">请快速免费回电！</textarea>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="padding-top:10px; font-size:12px; color:red;display:none;" align="center" id="xs">我们将立即回电。该通话对您免费，请放心接听！</div>
+                <div style="padding-top:10px; padding-left:50px; padding-right:50px;" align="center">
+                    <button type="submit" name="B1"  style="float:left; width:90px; line-height:30px; height:30px; text-align:center; font-size:14px; color:#FFFFFF; border-radius:3px; background:#00c897; border:none; cursor:pointer;" id="nb_nodeboard_send">提交留言</button>
+                    <a href="javascript:void(0);" >
+                        <div style="float:right; width:90px; line-height:30px; text-align:center; font-size:14px; color:#FFFFFF; border-radius:3px;  background:#fea525;">在线咨询</div>
+                    </a>
+                    <div style="clear:both;"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    window.setInterval(function () {
+        var center = document.getElementById("k_s_ol_inviteWin");
+        if (center) {
+            center.style.display='block'
+        }
+        //console.log(new Date());
+    }, 20000);
+
+    function closed(){
+        document.getElementById('k_s_ol_inviteWin').style.display='none'
+    }
+
+    $(function () {
+        var submit = false;
+        $('body').on( 'click', '#nb_nodeboard_send', function (event) {
+            event.preventDefault();
+
+            var sx = $("#xs");
+            var name = document.getElementById("nb_nodeboard_set_name").value;
+            var phone = document.getElementById("nb_nodeboard_set_phone").value;
+
+            if (name.length < 1){
+                sx.text('请输入您的姓名').show();
+                return false;
+            }
+            if (phone.length < 1) {
+                sx.text('请输入您的手机号').show();
+                return false;
+            }
+
+            if(!(/^1[3-9]\d{9}$/.test(phone))){
+                sx.text('请输入正确的手机号码').show();
+                return false;
+            }
+            submit = true;
+            if (! submit) return false;
+
+            $.ajax({
+                type: 'post',
+                data: {username: name, telephone: phone, content: '我们将立即回电。该通话对您免费，请放心接听！'},
+                url: "{:url('/index/index/message')}",
+                dataType: 'json',
+                success: function (retdat) {
+                    if (retdat.code == 200) {
+                        sx.text('我们将立即回电。该通话对您免费，请放心接听！').show();
+                        setTimeout(function () {
+                            $('#k_s_ol_inviteWin').remove();
+                        }, 1000);
+
+                    }
+                    submit = true;
+                },
+                error: function () {
+                    submit = true;
+                }
+            })
+        })
+    });
+
+
+    $(function(){
+        var nrW = $('.content2').width();
+        $('.content2 img').each(function(){
+            if($(this).width() > nrW)
+                $(this).css('width',nrW);
+            $(this).css('height','auto');
+        })
+    });
+
+    $(function(){
+
+        $(".opennav").click(function(){
+            $('.h_nav').slideToggle(400);
+        });
+    });
+    $(document).bind("click", function(e){
+        var target  = $(e.target);
+        if(target.closest(".opennav,.h_nav").length == 0){
+            $(".h_nav").slideUp(400);
+
+        }
+        e.stopPropagation();
+    });
+
+    $(function(){
+        $('.qh_hd ul li').click(function(){
+            $(this).addClass('current').siblings().removeClass('current');
+            $(this).parents('.qh_hd').next().children('ul').eq($(this).index()).show().siblings().hide();
+        });//.eq(0)[sEvent]();
+    });
+</script>
+</body>
+</html>

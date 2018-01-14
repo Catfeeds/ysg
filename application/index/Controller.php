@@ -59,7 +59,11 @@ class Controller
         }
 
         // 获取网站配置，菜单等公共信息
-        $config = $this->getModel('config')->where(['id' => 1])->find();
+        $config = cache('siteConfig');
+        if (! $config) {
+            $config = $this->getModel('config')->where(['id' => 1])->find();
+            cache('siteConfig', $config, EXPIRE_TIME);
+        }
 
         if (!empty($config) && $config['enabled'] == 'N') {
             exit('站点已关闭 == !');
@@ -67,8 +71,35 @@ class Controller
 
         $this->view->assign('config', $config);
 
-        $menus = $this->getModel('menu')->where(['enabled' => 'Y'])->field(['id', 'name', 'pinyin'])->select();
-        $this->view->assign('menus', $menus);
+        // 顶部菜单
+        $topMenus = cache('topMenus');
+
+        if (! $topMenus) {
+
+            $menus = $this->getModel('menu')->where(['enabled' => 'Y', 'is_top' => 'Y'])->field(['id', 'name', 'pinyin', 'parent_id'])->select()->toArray();
+
+            $result = [];
+            foreach ($menus as $item) {
+                if ($item['parent_id'] == 0) {
+                    $result[$item['id']] = $item;
+                } else {
+                    $result[$item['parent_id']]['child'][] = $item;
+                }
+            }
+            $topMenus = array_values($result);
+            cache('topMenus', $topMenus, EXPIRE_TIME);
+        }
+
+        $this->view->assign('topMenus', $topMenus);
+
+        // 底部导航
+        $bottomMenus = cache('bottomMenu');
+
+        if (! $bottomMenus) {
+            $bottomMenus = $this->getModel('menu')->where(['enabled' => 'Y', 'is_bottom' => 'Y'])->field(['id', 'name', 'pinyin'])->select()->toArray();
+            cache('bottomMenu', $bottomMenus, EXPIRE_TIME);
+        }
+        $this->view->assign('bottomMenus', $bottomMenus);
     }
 
     /**

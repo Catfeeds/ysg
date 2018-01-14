@@ -12,12 +12,13 @@
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>分类：</label>
-            <div class="formControls col-xs-6 col-sm-6">
+            <div class="formControls col-xs-6 col-sm-2">
                 <div class="select-box">
                     <select name="category_id" class="select">
                         <option value="">请选择分类</option>
                         {foreach $menus as $item}
-                        <option value="{$item.id}">{$item.name}</option>
+                        <?php if ($item['name'] != '企业新闻') {continue;} ?>
+                        <option value="{$item.id}" selected="selected">{$item.name}</option>
                         {/foreach}
                     </select>
                 </div>
@@ -26,22 +27,36 @@
         </div>
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>来源：</label>
-            <div class="formControls col-xs-6 col-sm-6">
+            <div class="formControls col-xs-6 col-sm-2">
                 <input type="text" class="input-text" placeholder="来源" name="author" value="{$vo.author ?? '官网'}"  datatype="*" nullmsg="请填写来源" errormsg="来源不能为空">
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>图片：</label>
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>展示图片(240 * 180)：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <input type="text" class="input-text" name="image" id="upload" placeholder="请点击后面的上传按钮" value="{$vo.image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
                 <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
-                <a onclick="window.open($('#upload').val())" type="button" class="btn btn-success radius" data-lightbox="preview">预览</a>
+                {$vo.image ? prevImage($vo.image) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>内容：</label>
+            <label class="form-label col-xs-3 col-sm-3">是否显示：</label>
+            <div class="formControls col-xs-6 col-sm-6 skin-minimal">
+                <div class="radio-box">
+                    <input type="radio" name="enabled" id="enabled-0" value="Y">
+                    <label for="enabled-1">显示</label>
+                </div>
+                <div class="radio-box">
+                    <input type="radio" name="enabled" id="enabled-1" value="N">
+                    <label for="enabled-0">隐藏</label>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>新闻内容：</label>
             <div class="formControls col-xs-6 col-sm-8">
                 <script id="editor" type="text/plain" style="height:400px">{$vo.content ? htmlspecialchars_decode($vo.content) : ''}</script>
             </div>
@@ -68,6 +83,7 @@
     $(function () {
         var categoryId = "{$vo.category_id ?? 0}";
         $("[name='category_id']").find("[value='"+ categoryId +"']").attr("selected", true);
+        $("[name='enabled'][value='{$vo.enabled ?? 'Y'}']").prop("checked", true);
 
         $('.skin-minimal input').iCheck({
             checkboxClass: 'icheckbox-blue',

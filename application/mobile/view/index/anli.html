@@ -1,0 +1,23 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/app.css"  rel="stylesheet" type="text/css" />
+<div class="weizhi">当前位置：<a href="/">首页</a> &gt; <b><a href="/">{$menuName}</a></b></div>
+
+<article>
+
+    <div class="pic_list1">
+        <ul class="clearfix">
+            {foreach $list as $item}
+            <li>
+                <a href="{:url('index/fengcaiDetail',['id'=>$item['id']])}"><img src="{$item.image}"><span>{$item.title}</span></a>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+
+    <div class="page-bootstrap">
+        {$list->render()}
+    </div>
+
+</article>
+{/block}

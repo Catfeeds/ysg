@@ -14,7 +14,8 @@ class MenuTopic extends Controller
     public function __construct()
     {
         parent::__construct();
-        $menus = model('menu')->getMenu();
+        //$menus = model('menu')->getMenu();
+        $menus = $this->getModel('menu')->getTree();
 
         $menusArr = array_column($menus, 'name', 'id');
         $this->view->assign('menus', $menus);

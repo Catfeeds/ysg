@@ -1,0 +1,32 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/news.css" rel="stylesheet" type="text/css" />
+
+<div class="weizhi" style="margin-top:30px;">当前位置：<a href="/">主页</a> > <a href="{:url('index/index/touzikaidian')}">投资开店</a> > <a href="#">{$menuName}</a> > </div>
+
+<!--微信会员活动专区 Start-->
+<div class="box" style="background-color:#fff;">
+    <div class="content_bt">
+        <h1>{$news.title}</h1>
+        <div class="content_ly">时间：{$news.create_time|date='Y-m-d H:i',###}| 来源：{$news.author} </div>
+</div>
+
+<div class="clearfix content2">
+    {$news.content|htmlspecialchars_decode}
+</div>
+
+<div class="shangxiapian">
+<span class="right">下一篇：{if condition="$next != ''"}<a href="{:url('index/touziDetail', ['id'=>$next['id']])}">{$next.title}</a> {else /} 没有了 {/if} </span>
+<span>上一篇：{if condition="$prev != ''"}<a href="{:url('index/touziDetail', ['id'=>$prev['id']])}">{$prev.title}</a> {else /} 没有了 {/if} </span>
+</div>
+
+<div class="xg_news">
+	<div class="title"><strong>相关阅读</strong></div>
+        <ul class="clearfix">
+            {foreach $relations as $item}
+             <li><em>{$item.create_time|date='Y-m-d', ###}</em><a href="{:url('index/touziDetail', ['id'=>$item['id']])}">{$item.title}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+{/block}

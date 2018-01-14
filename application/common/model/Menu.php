@@ -39,4 +39,51 @@ class Menu extends Model
 
         return $result;
     }
+
+    // 投资开店菜单
+    public function getInvestMenu()
+    {
+        $parentId = $this->where(['pinyin' => 'touzikaidian'])->value('id');
+        $result = $this->where([ 'enabled' => 'Y'])
+            ->where(['parent_id' => $parentId])
+            ->order('id ASC')
+            ->field(['id', 'name'])
+            ->select()
+            ->toArray();
+
+        return $result;
+    }
+
+    /**
+     * 获取树形结构菜单
+     * @return array
+     */
+    public function getTree()
+    {
+        $menus = $this
+            ->where(['enabled' => 'Y'])
+            ->field(['id', 'name', 'pinyin', 'parent_id'])
+            ->order('parent_id asc')
+            ->select()
+            ->toArray();
+
+        $result = [];
+        // 分组
+        foreach ($menus as $item) {
+            if ($item['parent_id'] == 0) {
+                $result[$item['id']][] = $item;
+            } else {
+                $result[$item['parent_id']][] = $item;
+            }
+        }
+        $menus = [];
+        // 排序
+        foreach ($result as $item) {
+            foreach ($item as $it) {
+                $menus[] = $it;
+            }
+        }
+
+        return $menus;
+    }
 }

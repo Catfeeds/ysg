@@ -35,7 +35,7 @@
             <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>网站描述：</label>
             <div class="formControls col-xs-6 col-sm-6">
                 <textarea class="textarea" placeholder="" name="description" onKeyUp="textarealength(this, 100)" datatype="*" nullmsg="请输入网站描述">{$vo.description ?? ''}</textarea>
-                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+                <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -45,6 +45,24 @@
                 <input type="text" class="input-text" name="logo" id="upload" placeholder="请点击后面的上传按钮" value="{$vo.logo ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
                 <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'upload\'])}')">上传</button>
                 {$vo.logo ? prevImage($vo.logo) : ''}
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>移动端网站logo(640 * 160)：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" name="mobile_logo" id="mobile_logo" placeholder="请点击后面的上传按钮" value="{$vo.mobile_logo ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'mobile_logo\'])}')">上传</button>
+                {$vo.mobile_logo ? prevImage($vo.mobile_logo) : ''}
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>移动端品牌logo(126 * 44)：</label>
+            <div class="formControls col-xs-6 col-sm-6">
+                <input type="text" class="input-text" name="brand_logo" id="brand_logo" placeholder="请点击后面的上传按钮" value="{$vo.brand_logo ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'brand_logo\'])}')">上传</button>
+                {$vo.brand_logo ? prevImage($vo.brand_logo) : ''}
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>

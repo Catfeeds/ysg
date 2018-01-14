@@ -5,12 +5,12 @@
         <input type="hidden" name="id" value="{$vo.id ?? ''}">
         <div class="row cl">
             <label class="form-label col-xs-3 col-sm-2">菜单名称：</label>
-            <div class="formControls col-xs-6 col-sm-6">
+            <div class="formControls col-xs-6 col-sm-3">
                 <div class="select-box">
                     <select name="menu_id" class="select">
                         <option value="0">请选择关联菜单</option>
                         {foreach $menus as $item}
-                        <option value="{$item.id}">{$item.name}</option>
+                        <option value="{$item.id}">&nbsp;&nbsp;|-- {if condition="$item.parent_id > 0"}---- {/if}{$item.name}</option>
                         {/foreach}
                     </select>
                 </div>
