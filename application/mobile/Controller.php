@@ -8,7 +8,7 @@
  * @license   http://www.apache.org/licenses/LICENSE-2.0
  */
 
-namespace app\index;
+namespace app\mobile;
 
 use think\View;
 use think\Request;
@@ -59,10 +59,10 @@ class Controller
         }
 
         // 获取网站配置，菜单等公共信息
-        $config = cache('siteConfig');
+        $config = cache('mobile_siteConfig');
         if (! $config) {
             $config = $this->getModel('config')->where(['id' => 1])->find();
-            cache('siteConfig', $config, EXPIRE_TIME);
+            cache('mobile_siteConfig', $config, EXPIRE_TIME);
         }
 
         if (!empty($config) && $config['enabled'] == 'N') {
@@ -72,34 +72,20 @@ class Controller
         $this->view->assign('config', $config);
 
         // 顶部菜单
-        $topMenus = cache('topMenus');
+        $topMenus = cache('mobile_topMenus');
 
         if (! $topMenus) {
 
-            $menus = $this->getModel('menu')->where(['enabled' => 'Y', 'is_top' => 'Y'])->field(['id', 'name', 'pinyin', 'parent_id'])->select()->toArray();
+            $topMenus = $this->getModel('mobile_menu')
+                ->alias('i')
+                ->join('menu menu', 'i.menu_id = menu.id')
+                ->where(['menu.enabled' => 'Y'])
+                ->field(['menu.id', 'menu.name', 'menu.pinyin', 'menu.parent_id'])
+                ->select();
 
-            $result = [];
-            foreach ($menus as $item) {
-                if ($item['parent_id'] == 0) {
-                    $result[$item['id']] = $item;
-                } else {
-                    $result[$item['parent_id']]['child'][] = $item;
-                }
-            }
-            $topMenus = array_values($result);
-            cache('topMenus', $topMenus, EXPIRE_TIME);
+            cache('mobile_topMenus', $topMenus, EXPIRE_TIME);
         }
-
         $this->view->assign('topMenus', $topMenus);
-
-        // 底部导航
-        $bottomMenus = cache('bottomMenu');
-
-        if (! $bottomMenus) {
-            $bottomMenus = $this->getModel('menu')->where(['enabled' => 'Y', 'is_bottom' => 'Y'])->field(['id', 'name', 'pinyin'])->select()->toArray();
-            cache('bottomMenu', $bottomMenus, EXPIRE_TIME);
-        }
-        $this->view->assign('bottomMenus', $bottomMenus);
     }
 
     /**

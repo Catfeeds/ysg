@@ -1,0 +1,28 @@
+
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/brand.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/css/app.css"  rel="stylesheet" type="text/css" />
+<div class="weizhi" style="margin-top:30px;">当前位置：<a href="/">主页</a> > <a href="#">成功案例</a> > <a href="#">加盟商感言</a> > </div>
+
+<div class="box" style="background-color:#fff; padding-top:20px;">
+	<div class="mendian_list" style="background-color:#FFF;">
+    	<h1 class="news_bt">加盟商感言</h1>
+        <ul class="clearfix">
+            {foreach $list as $item}
+            <li>
+                <span>
+                    <a  href="{:url('index/ganyanDetail', ['id'=>$item['id']])}" target="_blank" title="{$item.title}">
+                        <img src="{$item.image}" width="190" height="130" alt="{$item.title}" />
+                    </a>
+                </span>
+                <p>{$item.title}<br />{$item.create_time|date='Y-m-d H:i', ###}</p>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="page-bootstrap">
+        {$list->render()}
+    </div>
+</div>
+{/block}

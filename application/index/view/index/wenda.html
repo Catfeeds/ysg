@@ -1,0 +1,32 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/news.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/css/app.css" rel="stylesheet" type="text/css" />
+<div class="weizhi" style="margin-top:30px;">当前位置： <a href="/">主页</a> > <a href="{:url('index/index/touzikaidian')}">投资开店</a> > <a href="#">开店问答</a> > </div>
+
+<!--微信会员活动专区 Start-->
+<div class="box" style="background-color:#fff;">
+	<div class="news_nav">
+    	<ul class="clearfix">
+        	 <li><a href="{:url('index/index/touzikaidian')}">全部</a></li>
+            {foreach $category as $item}
+            <li {if condition="$pinyin == $item['pinyin']"} class='dq' {/if}><a href="{:url('index/index/touzikaidian', ['pinyin' => $item['pinyin']])}" title="{$item.name}">{$item.name}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="wenda_list">
+        <ul>
+            {foreach $news as $new}
+            <li>
+                <strong><a href="{:url('index/index/touziDetail', ['id'=>$new['id']])}"><b>{$new.title}</b></a></strong>
+                <p>{$new.content|htmlspecialchars_decode|strip_tags|mb_substr=###,0,60,'utf-8'}...<a href="{:url('index/index/touziDetail', ['id'=>$new['id']])}">[详情>>]</a></p>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="page-bootstrap">
+        {$news->render()}
+    </div>
+</div>
+{/block}
+<!--微信会员活动专区 End-->

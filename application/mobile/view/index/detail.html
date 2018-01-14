@@ -1,0 +1,29 @@
+{extend name="template/header" /}
+{block name="content"}
+<div class="weizhi">当前位置：<a href="/">首页</a> >  <b><a href="#">详情</a></b></div>
+  
+<article>
+  <div class="content_bt">
+    <h1>{$news.title}</h1>
+    <div class="content_ly">
+      时间：{$news.create_time|date='Y-m-d H:i',###}&nbsp;|&nbsp;来源：{$news.author}&nbsp;|&nbsp;编辑：admin
+    </div>
+  </div>
+  <div class="clearfix content2">
+    {$news.content|htmlspecialchars_decode}
+  </div>
+
+  <div class="shangxiapian clearfix">
+    {if condition="! empty($prev)"}<a href="{:url('index/detail',['id' => $prev['id']])}">上一篇：{$prev.title}</a> {else /} <a>上一篇：没有了</a> {/if}
+    {if condition="! empty($next)"}<a href="{:url('index/detail',['id' => $next['id']])}">下一篇：{$next.title}</a> {else /} <a>下一篇：没有了</a> {/if}
+  </div>
+  <div class="xiangguanyuedu">
+    <div class="bt2"><h2>相关阅读</h2></div>
+    <ul>
+      {foreach  $relations as $item}
+      <li><a href="{:url('index/detail', ['id'=>$item['id']])}">{$item.title}</a></li>
+      {/foreach}
+    </ul>
+  </div>
+</article>
+{/block}

@@ -53,4 +53,37 @@ class Menu extends Model
 
         return $result;
     }
+
+    /**
+     * 获取树形结构菜单
+     * @return array
+     */
+    public function getTree()
+    {
+        $menus = $this
+            ->where(['enabled' => 'Y'])
+            ->field(['id', 'name', 'pinyin', 'parent_id'])
+            ->order('parent_id asc')
+            ->select()
+            ->toArray();
+
+        $result = [];
+        // 分组
+        foreach ($menus as $item) {
+            if ($item['parent_id'] == 0) {
+                $result[$item['id']][] = $item;
+            } else {
+                $result[$item['parent_id']][] = $item;
+            }
+        }
+        $menus = [];
+        // 排序
+        foreach ($result as $item) {
+            foreach ($item as $it) {
+                $menus[] = $it;
+            }
+        }
+
+        return $menus;
+    }
 }

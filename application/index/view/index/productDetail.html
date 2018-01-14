@@ -1,0 +1,44 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/product.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/css/app.css" rel="stylesheet" type="text/css" />
+
+<!--产品展示 Start-->
+<div class="weizhi" style="margin-top:30px;">当前位置：<a href="/">主页</a> > <a href="#">产品展示</a> > <a href="#">产品详情</a> > </div>
+
+<!--微信会员活动专区 Start-->
+<div class="box2">
+    <div class="product_bt">
+    	<ul>
+            {foreach $categories as $category}
+            <li><a href="{:url('index/fenlei', ['cid'=>$category['id']])}" class="pic1" style="background:url({$category.image});">{$category.title}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+    
+    <div class="product_zs clearfix">
+    	<div class="product_zs_pic"><img src="{$product.image}" alt="{$product.title}" class="png" /></div>
+        <div class="product_zs_js">
+        	<h1>{$product.title}</h1>
+            <em>产品时间：{$product.create_time|date='Y-m-d H:i',###}</em>
+            <strong>产品简介：</strong>
+            <div class="product_zs_js1">
+                {$product.content|htmlspecialchars_decode|strip_tags}
+            </div>
+        </div>
+    </div>
+    <div class="product_sxp clearfix">
+        <span class="left">上一篇：{if condition="! empty($next)"}<a href="{:url('index/index/fenleiDetail',['id' => $next['id']])}">{$next.title}</a> {else /} 没有了 {/if} </span>
+        <span class="right">下一篇：{if condition="! empty($prev)"}<a href="{:url('index/index/fenleiDetail',['id' => $prev['id']])}">{$prev.title}</a> {else /} 没有了 {/if} </span>
+    </div>
+    <div class="xg_news">
+        <div class="title"><strong>相关阅读</strong></div>
+        <ul class="clearfix">
+            {foreach  $relations as $item}
+            <li><em>{$item.create_time|date='Y-m-d',###}</em><a href="{:url('index/index/fenleiDetail', ['id'=>$item['id']])}">{$item.title}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+<!--微信会员活动专区 End-->
+{/block}

@@ -14,8 +14,8 @@
 
 
     <div class="shangxiapian">
-        <span class="right">下一篇：<a href="96.html">{$next|default='没有了'}</a>  </span>
-        <span>上一篇：{$prev|default='没有了'} </span>
+        <span class="right">下一篇：{if condition="! empty($next)"}<a href="{:url('index/index/detail',['id' => $next['id']])}">{$next.title}</a> {else /} 没有了 {/if}  </span>
+        <span>上一篇：{if condition="! empty($prev)"}<a href="{:url('index/index/detail',['id' => $prev['id']])}">{$prev.title}</a> {else /} 没有了 {/if} </span>
     </div>
 
     <div class="xg_news">

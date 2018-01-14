@@ -41,8 +41,8 @@ $(function(){
 	<ul>
         {foreach $menus as $item}
 		<li>
-			<div class="img_show"><a href="todo" target="_blank"><img src="{$item.image}" alt=""></a></div>
-			<div class="tit"><a href="todo" target="_blank"><i class="icon1" style="width: 30px;height: 30px;margin-right: 5px;display: inline-block;background: url({$item.icon}) no-repeat;vertical-align: text-bottom;"></i>{$item.name}</a></div>
+			<div class="img_show"><a href="{:url('index/index/' . $item['pinyin'])}" target="_blank"><img src="{$item.image}" alt=""></a></div>
+			<div class="tit"><a href="{:url('index/index/' . $item['pinyin'])}" target="_blank"><i class="icon1" style="width: 30px;height: 30px;margin-right: 5px;display: inline-block;background: url({$item.icon}) no-repeat;vertical-align: text-bottom;"></i>{$item.name}</a></div>
 		</li>
         {/foreach}
 
@@ -54,7 +54,7 @@ $(function(){
 <div class="box clearfix m25">
 <!--媒体报道-->
 	<div class="in_news1 left">
-		<h2 class="title"><strong><a href="todo" target="_blank">媒体报道</a></strong><a href="todo" class="more" target="_blank">更多+</a></h2>
+		<h2 class="title"><strong><a href="{:url('index/index/qiyexinwen')}" target="_blank">媒体报道</a></strong><a href="{:url('index/index/qiyexinwen')}" class="more" target="_blank">更多+</a></h2>
         <div class="shipin">
             <video src="{$videos[0]['url']}" width="285" height="220"  controls autobuffer></video>
         <!--<embed src="../player.letvcdn.com/lc07_p/201706/08/09/43/0945/newplayer/bcloud.swf-" allowfullscreen="true" quality="high" align="middle" allowscriptaccess="always" width="285" height="190" wmode="transparent" flashvars="uu=29def2a1d5&vu=7bc43c750d&auto_play=0&gpcflag=1&width=640&height=360&lang=zh_CN" type="application/x-shockwave-flash"></embed>-->
@@ -66,12 +66,12 @@ $(function(){
 <!--最新活动-->
     {if condition="count($news) > 0"}
 	<div class="in_news1 in_news left">
-		<h2 class="title"><strong><a href="todo" target="_blank">最新活动</a></strong><a href="todo" class="more" target="_blank">更多+</a></h2>
+		<h2 class="title"><strong><a href="{:url('index/index/qiyexinwen')}" target="_blank">最新活动</a></strong><a href="{:url('index/index/qiyexinwen')}" class="more" target="_blank">更多+</a></h2>
 		<dl>
-            <dt><a href="todo">
+            <dt><a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}">
                 <img src="{$news[0]['image']}" alt="{$news[0]['title']}" title="{$news[0]['title']}" width="70px" height="70px"></a></dt>
-            <dd> <strong><a href="todo" title="{$news[0]['title']}" target="_blank">{$news[0]['title']||mb_substr=###,0,17,'utf-8'}</a></strong>
-                <p>{$news[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8'}...<a href="qiyenews/2501.html" title="{$news[0]['title']}" target="_blank">详情>></a></p>
+            <dd> <strong><a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}" title="{$news[0]['title']}" target="_blank">{$news[0]['title']||mb_substr=###,0,17,'utf-8'}</a></strong>
+                <p>{$news[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8'}...<a href="{:url('index/index/detail', ['id'=>$news[0]['id']])}" title="{$news[0]['title']}" target="_blank">详情>></a></p>
             </dd>
 		</dl>
         {if condition="count($news) > 1"}
@@ -79,7 +79,7 @@ $(function(){
             {foreach $news as $key => $item}
             {if condition="$key > 0"}
             <li>
-                <em>{$item.create_time|date="Y-m-d", ###}</em><a href="todo" title="{$item.title}" target="_blank">{$item.title}</a>
+                <em>{$item.create_time|date="Y-m-d", ###}</em><a href="{:url('index/index/detail',['id'=>$item['id']])}" title="{$item.title}" target="_blank">{$item.title}</a>
             </li>
             {/if}
             {/foreach}
@@ -218,8 +218,8 @@ $(function(){
 <!--13+1大类产品，1000多款畅销单品-->
 {if condition="$index.products_title != '' "}
 <div class="box4 m25">
-	<div class="cp-title"><strong><a href="todo" target="_blank">{$index.products_title}</a></strong><a href="todo" class="more" target="_blank">产品类别>></a><a href="products/index.htm" class="more" target="_blank">新品上线>></a></div>
-    <div class="cp-box"><a href="todo" title="{$index.products_title}"><img src="{$index.products_logo}" alt="{$index.products_title}"></a></div>
+	<div class="cp-title"><strong><a href="{:url('index/index/chanpinzhanshi')}" target="_blank">{$index.products_title}</a></strong><a href="todo" class="more" target="_blank">产品类别>></a><a href="products/index.htm" class="more" target="_blank">新品上线>></a></div>
+    <div class="cp-box"><a href="{:url('index/index/chanpinzhanshi')}" title="{$index.products_title}"><img src="{$index.products_logo}" alt="{$index.products_title}"></a></div>
 </div>
 {/if}
 
@@ -234,12 +234,12 @@ $(function(){
         <div class="in_news1 in_news left">
     {/if}
 
-            <h2 class="title"><strong><a href="#" target="_blank">{$imenu.name}</a></strong><a href="{$imenu.pinyin}" class="more" target="_blank">更多+</a></h2>
+            <h2 class="title"><strong><a href="#" target="_blank">{$imenu.name}</a></strong><a href="{:url('index/index/' . $imenu['pinyin'])}" class="more" target="_blank">更多+</a></h2>
             {if condition="isset( $invests[$imenu['pinyin']][0])" }
                 <dl>
-                    <dt><a href="todo"><img src="{$invests[$imenu['pinyin']][0]['image']}" alt="{$invests[$imenu['pinyin']][0]['title']}" title="{$invests[$imenu['pinyin']][0]['title']}" width="70px" height="70px"></a></dt>
-                    <dd> <strong><a href="todo" title="{$invests[$imenu['pinyin']][0]['title']}" target="_blank">{$invests[$imenu['pinyin']][0]['title']}</a></strong>
-                        <p>{$invests[$imenu['pinyin']][0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8' }...<a href="lirun/2502.html" title="休闲食品加盟品牌，实地考察需要注意的几个方面" target="_blank">详情>></a></p>
+                    <dt><a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}"><img src="{$invests[$imenu['pinyin']][0]['image']}" alt="{$invests[$imenu['pinyin']][0]['title']}" title="{$invests[$imenu['pinyin']][0]['title']}" width="70px" height="70px"></a></dt>
+                    <dd> <strong><a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}" title="{$invests[$imenu['pinyin']][0]['title']}" target="_blank">{$invests[$imenu['pinyin']][0]['title']}</a></strong>
+                        <p>{$invests[$imenu['pinyin']][0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,43,'utf-8' }...<a href="{:url('index/index/touzidetail', ['id'=>$invests[$imenu['pinyin']][0]['id']])}" title="" target="_blank">详情>></a></p>
                     </dd>
 
                 </dl>
@@ -247,7 +247,7 @@ $(function(){
             <ul>
                 {foreach $invests[$imenu['pinyin']] as $kk => $invest}
                 <?php if ($kk == 0) {continue;} ?>
-                <li><em>{$invest.create_time|date='Y-m-d', ###}</em><a href="todo" title="{$invest.title}" target="_blank">{$invest.title}</a></li>
+                <li><em>{$invest.create_time|date='Y-m-d', ###}</em><a href="{:url('index/index/touzidetail', ['id'=>$invest['id']])}" title="{$invest.title}" target="_blank">{$invest.title}</a></li>
                 {/foreach}
             </ul>
         </div>
@@ -260,7 +260,7 @@ $(function(){
 <!--加盟服务-->
 <div class="box4 m25">
 	<div class="common_hd">
-		<div class="tit"><a href="todo"><img src="__STATIC__/images/index/jmfw.png" alt="加盟服务"></a></div>
+		<div class="tit"><a href="{:url('index/index/yingxiaoyoushi')}"><img src="__STATIC__/images/index/jmfw.png" alt="加盟服务"></a></div>
 		<div class="info">{$index.service_title}</div>
 		<div class="more"><a href="javascript:void(0)" onclick="online()"><img src="__STATIC__/images/index/index_ask_btn.gif" alt="立即在线咨询"></a></div>
 	</div>
@@ -269,12 +269,12 @@ $(function(){
     	<dl>
         	<dt>{$index.service_subtitle|htmlspecialchars_decode}</dt>
             {foreach $service as $item}
-            <dd><a href="todo" title="加盟服务"><img src="{$item.image}" alt="加盟服务"></a></dd>
+            <dd><a href="{:url('index/index/yingxiaoyoushi')}" title="加盟服务"><img src="{$item.image}" alt="加盟服务"></a></dd>
             {/foreach}
         </dl>
     </div>
     
-    <div class="jmfw-zx"><a href="javascript:void(0)" onclick="online()"><img src="{$index.service_logo}" alt="一扫光财富项目一次投入 多倍利润 咨询加盟详情"></a></div>
+    <div class="jmfw-zx"><a href="javascript:void(0)" onclick="online()"><img src="{$index.service_logo}" alt="多倍利润 咨询加盟详情"></a></div>
 </div>
 {/if}
 
@@ -293,7 +293,7 @@ $(function(){
             {foreach $fengcais as $item}
             <dd>
                 <div class="tabbox dingwei"> 
-                    <a href="todo" >
+                    <a href="{:url('index/index/ganyandetail', ['id'=>$item['id']])}" >
                         <img src="{$item.image}" alt="{$item.title}">
                         <div class="tabtext">{$item.title}</div>
                     </a>
@@ -304,7 +304,7 @@ $(function(){
             {foreach $ganyans as $item}
             <dd>
                 <div class="tabbox dingwei">
-                    <a href="todo" >
+                    <a href="{:url('index/index/ganyandetail', ['id'=>$item['id']])}" >
                         <img src="{$item.image}" alt="{$item.title}">
                         <div class="tabtext">{$item.title}</div>
                     </a>

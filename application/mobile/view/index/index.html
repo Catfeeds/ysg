@@ -1,0 +1,151 @@
+{extend name="template/header" /}
+{block name="content"}
+  <header class="in_head"> <img src="{$config.mobile_logo}" width="100%" alt=""/> </header>
+  <div class="tel">免费加盟电话：{$config.mobile}</div>
+  <!--焦点广告 Start-->
+  
+  <article class="pic">
+    <div class="scroll relative">
+      <div id="scroll_img" class="scroll_box" style="visibility: visible;">
+        <ul class="scroll_wrap" style="width: 2560px;">
+            {foreach $banners as $item}
+            <li>
+                <a onclick="online()" href="javascript:void(0)" data-width="640*268">
+                    <img width="100%" alt="" src="{$item.image}">
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+      </div>
+      <ul id="scroll_position" class="scroll_position" style="display: none;">
+          {foreach $banners as $key => $item}
+            <li {if condition="$key ==0"} class="on" {/if}><a href="javascript:void(0);"></a></li>
+          {/foreach}
+      </ul>
+    </div>
+</article>
+<script>
+    var bullets = document.getElementById('scroll_position').getElementsByTagName('li');
+
+	var slider = Swipe(document.getElementById('scroll_img'), {
+		auto: 3000,
+		continuous: true,
+		callback: function(pos) {
+		    return true;
+			var i = bullets.length;
+			while (i--) {
+                bullets[pos].setAttribute('class', ' ');
+			}
+			bullets[pos].setAttribute('class', 'on');
+		}
+	});
+    //console.log($);
+	$(function(){
+		$('.scroll_position_bg').css({
+			width:$('#scroll_position').width()
+		});
+	});
+
+</script> 
+  
+  <!--焦点广告 End-->
+  
+<nav class="nav">
+    <ul class="clearfix">
+        {foreach $menus as $key => $item}
+        <li>
+            <a href="{:url('index/'.$item['pinyin'])}" class="icon" style="background: #{$colors[$key/3]} url({$item.icon}) no-repeat;background-size:100%">{$item.alias ?: $item.name}</a>
+            <a href="{:url('index/'.$item['pinyin'])}">{$item.alias ?: $item.name}</a>
+        </li>
+        {/foreach}
+        {if condition="null != $video"}
+        <li>
+            <a href="{:url('index/video')}" class="icon icon10" >企业宣传视频</a>
+            <a href="{:url('index/video')}">企业宣传视频</a>
+        </li>
+        {/if}
+  </ul>
+</nav>
+<!--
+
+<article class="youshi">
+    <ul class="clearfix">
+        <li><a href="meiti/index.htm"><img src="templets/ysg/public/images/pic/ys1.jpg" width="100%"/></a></li>
+        <li><a href="products/index.htm"><img src="templets/ysg/public/images/pic/ys2.jpg" width="100%"/></a></li>
+        <li><a href="products/index.htm"><img src="templets/ysg/public/images/pic/ys3.jpg" width="100%"/></a></li>
+        <li><a href="meiti/index.htm"><img src="templets/ysg/public/images/pic/ys4.jpg" width="100%"/></a></li>
+        <li><a href="javascript:void(0)" onclick="online()"><img src="templets/ysg/public/images/pic/ys5.gif" width="100%"/></a></li>
+        <li><a href="youshi/index.htm"><img src="templets/ysg/public/images/pic/ys6.jpg" width="100%"/></a></li>
+        <li><a href="baozhang/index.htm"><img src="templets/ysg/public/images/pic/ys7.jpg" width="100%"/></a></li>
+        <li><a href="baozhang/index.htm"><img src="templets/ysg/public/images/pic/ys8.jpg" width="100%"/></a></li>
+        <li><a href="youshi/index.htm"><img src="templets/ysg/public/images/pic/ys9.jpg" width="100%"/></a></li>
+    </ul>
+</article>
+-->
+
+<!--加盟商风采-->
+<article>
+    <div class="qh_hd">
+        <ul>
+            <li class="current" style=" width:24%;"><a href="javascript:void(0)">门店展示</a></li>
+        </ul>
+    </div>
+    <div class="pic_list">
+        <ul class="clearfix">
+            {foreach $ganyans as $item}
+            <li><a href="{:url('index/fengcai',['id'=>$item['id']])}"><img src="{$item.image}"/><span>{$item.title}</span></a></li>
+            {/foreach}
+        </ul>
+    </div>
+</article>
+
+<article>
+    <div class="qh_hd">
+        <ul>
+            <li class="current"><a href="javascript:void(0)">企业新闻</a></li>
+            <li><a href="javascript:void(0)">投资开店</a></li>
+            <li><a href="javascript:void(0)">成功案例</a></li>
+        </ul>
+    </div>
+    <div class="qh_bd">
+        <ul>
+            {if condition="count($news) > 0"}
+            <li>
+                <a href="{:url('index/detail',['id'=>$news[0]['id']])}"><img src="{$news[0]['image']}"/></a>
+                <strong><a href="{:url('index/detail',['id'=>$news[0]['id']])}">{$news[0]['title']}</a></strong>
+                <p>{$news[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,42,'utf-8'}...</p>
+            </li>
+            {/if}
+            {foreach $news as $item}
+            <li><a href="{:url('index/detail',['id'=>$item['id']])}">{$item.title}</a></li>
+            {/foreach}
+      </ul>
+      <ul style="display:none;">
+          {if condition="count($invests) > 0"}
+          <li>
+              <a href="{:url('index/touziDetail',['id'=>$invests[0]['id']])}"><img src="{$invests[0]['image']}"/></a>
+              <strong><a href="{:url('index/touziDetail',['id'=>$invests[0]['id']])}">{$invests[0]['title']}</a></strong>
+              <p>{$invests[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,42,'utf-8'}...</p>
+          </li>
+          {/if}
+          {foreach $invests as $item}
+          <li><a href="{:url('index/detail',['id'=>$item['id']])}">{$item.title}</a></li>
+          {/foreach}
+
+    </ul>
+    <ul style="display:none;">
+        {if condition="isset($joins[0])"}
+        <li>
+            <a href="{:url('index/ganyanDetail',['id'=>$joins[0]['id']])}"><img src="{$joins[0]['image']}"/></a>
+            <strong><a href="{:url('index/ganyanDetail',['id'=>$joins[0]['id']])}">{$joins[0]['title']}</a></strong>
+            <p>{$joins[0]['content']|htmlspecialchars_decode|strip_tags|mb_substr=###,0,42,'utf-8'}...</p>
+        </li>
+        {/if}
+        {foreach $joins as $item}
+        <li><a href="{:url('index/detail',['id'=>$item['id']])}">{$item.title}</a></li>
+        {/foreach}
+    </ul>
+    </div>
+</article>
+
+{/block}

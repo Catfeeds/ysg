@@ -14,11 +14,11 @@
         <thead>
         <tr class="text-c">
             <th width="25"><input type="checkbox"></th>
-            <th width="">分类名称</th>
-            <th width="">分类简称</th>
-            <th width="">分类图标</th>
-            <!--<th width="">切换图片</th>-->
-            <th width="">是否显示</th>
+            <th width="">菜单名称</th>
+            <th width="">菜单别名</th>
+            <th width="">菜单图标(80 * 80)</th>
+            <th width="">显示在首页</th>
+            <th width="">排序</th>
             <th width="160">操作</th>
         </tr>
         </thead>
@@ -26,11 +26,11 @@
         {volist name="list" id="vo"}
         <tr class="text-c">
             <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
-            <td>{$vo.title}</td>
-            <td>{$vo.pinyin}</td>
-            <td>{$vo.image|prev_image}</td>
-            <!--<td>{$vo.image_hover|prev_image}</td>-->
-            <td>{$vo.enabled|get_enabled}</td>
+            <td>{$vo.menu_id ? $menusArr[$vo.menu_id] : ''}</td>
+            <td>{$vo.alias}</td>
+            <td>{$vo.icon|prev_image}</td>
+            <td>{$vo.index_show == 'N' ? '<a class="btn btn-warning">否</a>' : '<a class="btn btn-primary">是</a>'}</td>
+            <td>{$vo.position}</td>
             <td class="f-14">
                 {tp:menu menu='myedit' /}
                 {tp:menu menu='mydelete' /}

@@ -5,12 +5,11 @@ namespace app\admin\controller;
 
 use app\admin\Controller;
 
-class IndexMenu extends Controller
+class MobileMenu extends Controller
 {
     use \app\admin\traits\controller\Controller;
     // 方法黑名单
     protected static $blacklist = [];
-
     public function __construct()
     {
         parent::__construct();
@@ -20,4 +19,5 @@ class IndexMenu extends Controller
         $this->view->assign('menus', $menus);
         $this->view->assign('menusArr', $menusArr);
     }
+    
 }

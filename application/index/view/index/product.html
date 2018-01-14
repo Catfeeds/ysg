@@ -1,0 +1,92 @@
+{extend name="template/header" /}
+{block name="content"}
+<link href="__STATIC__/css/product.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/css/app.css" rel="stylesheet" type="text/css" />
+
+<!--产品展示 Start-->
+<div class="box" >
+    <div class="weizhi" style="margin-top:30px;">当前位置： <a href="/">主页</a> > <a href="#">产品展示</a> > </div>
+    <!-- 幻灯片 Start -->
+    <div class="flexslider" style="display: none">
+        <ul class="slides">
+            <li>
+                <a href="javascript:void(0)" onclick="online()"><img src="" alt="一扫光美食屋 千款好味道等你品尝" /></a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" onclick="online()"><img src="" alt="移动随想 想购就购" /></a>
+            </li>
+        </ul>
+    </div>
+    <!--<script src="../templets/ysg/js/jquery.flexslider-min.js"></script>
+    <script>
+        $(function(){
+            $('.flexslider').flexslider({
+                directionNav: true,
+                pauseOnAction: false
+            });
+        });
+    </script>-->
+    <!-- 幻灯片 End -->
+</div>
+<!--产品展示 End-->
+
+
+<!--微信会员活动专区 Start-->
+<div class="box2 mt18">
+    <div class="weixincp">
+    	<h2>微信会员 活动专区</h2>
+        <ul class="clearfix">
+            {foreach $newProducts as $product}
+            <li style="height: 200px">
+            	<span>
+                    <a href="{:url('index/fenleiDetail', ['id'=>$product['id']])}">
+                        <img src="{$product.image}" alt="{$product.title}"  width="188" height="141"/>
+                        <i class="hot1  png">新品</i>
+                    </a>
+                </span>
+                <em>{$product.title}</em>
+                <!--<strong>聚海肉干(五香)（选用谷物</strong>-->
+            </li>
+            {/foreach}
+        </ul>        
+    </div>    
+</div>
+<!--微信会员活动专区 End-->
+
+<!--微信会员活动专区 Start-->
+<div class="box2 mt18">
+    <div class="product_bt">
+    	<ul>
+            {foreach $categories as $category}
+            <li><a href="{:url('index/fenlei', ['cid'=>$category['id']])}" class="pic1" style="background:url({$category.image});">{$category.title}</a></li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="product_all">
+        <li><a href="{:url('index/fenlei', ['type'=>'all'])}" {if condition="$type == 'all'"} class='dq' {/if}>全部</a></li>
+        <li ><a href="{:url('index/fenlei', ['type'=>'category'])}" title="产品分类" {if condition="$type == 'category'"} class='dq' {/if}>产品分类</a></li>
+        <li ><a href="{:url('index/fenlei', ['type'=>'new'])}" title="新品上线" {if condition="$type == 'new'"} class='dq' {/if}>新品上线</a></li>
+    </div>
+    <div class="product_list">
+    	<ul class="clearfix">
+            {foreach $products as $product}
+            <li>
+            	<span>
+                    <a href="{:url('index/fenleiDetail', ['id'=>$product['id']])}" title="{$product.title}">
+                        <img src="{$product.image}" alt="{$product.title}"  width="188" height="141"/>
+                        {if condition="$product['is_hot'] == 'Y'"}
+                        <i class="hot png">爆款</i>
+                        {/if}
+                    </a>
+                </span>
+                <strong>{$product.title}</strong>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+    <div class="page-bootstrap">
+        {$products->render()}
+    </div>
+</div>
+<!--微信会员活动专区 End-->
+{/block}

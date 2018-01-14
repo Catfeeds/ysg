@@ -4,7 +4,7 @@
     
     <div class="cl pd-5 bg-1 bk-gray">
         <span class="l">
-            {tp:menu menu="add,delete" /}
+            {tp:menu menu="fulladd,delete" /}
         </span>
         <span class="r pt-5 pr-5">
             共有数据 ：<strong>{$count ?? '0'}</strong> 条
@@ -14,11 +14,11 @@
         <thead>
         <tr class="text-c">
             <th width="25"><input type="checkbox"></th>
-            <th width="">分类名称</th>
-            <th width="">分类简称</th>
-            <th width="">分类图标</th>
-            <!--<th width="">切换图片</th>-->
+            <th width="">标题</th>
+            <th width="">来源</th>
+            <th width="">封面图</th>
             <th width="">是否显示</th>
+            <th width="">时间</th>
             <th width="160">操作</th>
         </tr>
         </thead>
@@ -27,12 +27,12 @@
         <tr class="text-c">
             <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
             <td>{$vo.title}</td>
-            <td>{$vo.pinyin}</td>
+            <td>{$vo.author}</td>
             <td>{$vo.image|prev_image}</td>
-            <!--<td>{$vo.image_hover|prev_image}</td>-->
             <td>{$vo.enabled|get_enabled}</td>
+            <td>{$vo.create_time|date='Y-m-d H:i',###}</td>
             <td class="f-14">
-                {tp:menu menu='myedit' /}
+                {tp:menu menu='fulledit' /}
                 {tp:menu menu='mydelete' /}
             </td>
         </tr>

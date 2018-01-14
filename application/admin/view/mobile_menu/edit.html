@@ -18,43 +18,43 @@
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>图片(178 * 133)：</label>
+            <label class="form-label col-xs-3 col-sm-3">菜单别名：</label>
+            <div class="formControls col-xs-6 col-sm-3">
+                <input type="text" class="input-text" placeholder="别名" name="alias" value="{$vo.alias ?? ''}">
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+
+
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>菜单图标(80 * 80)：</label>
             <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" name="image" id="image" placeholder="请点击后面的上传按钮" value="{$vo.image ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
-                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'image\'])}')">上传</button>
-                {$vo.image ? prevImage($vo.image) : ''}
+                <input type="text" class="input-text" name="icon" id="icon" placeholder="请点击后面的上传按钮" value="{$vo.icon ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
+                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'icon\'])}')">上传</button>
+                {$vo.icon ? prevImage($vo.icon) : ''}
                 <!--<input type="text" class="input-text" placeholder="显示图片" name="image" value="{$vo.image ?? ''}"  datatype="*" nullmsg="请填写显示图片">-->
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
         <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>icon图标(30 * 30)：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="text" class="input-text" name="icon" id="icon" placeholder="请点击后面的上传按钮" value="{$vo.icon ?? ''}" datatype="*" nullmsg="请填写图片url" style="width: 70%">
-                <button type="button" class="btn btn-primary radius" onclick="layer_open('文件上传','{:\\think\\Url::build(\'Upload/index\', [\'id\' => \'icon\'])}')">上传</button>
-                {$vo.icon ? prevImage($vo.icon) : ''}
-                <!--<input type="text" class="input-text" placeholder="icon图标" name="icon" value="{$vo.icon ?? ''}"  datatype="*" nullmsg="请填写icon图标">-->
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">排序：</label>
-            <div class="formControls col-xs-6 col-sm-6">
-                <input type="number" class="input-text" placeholder="排序" name="position" value="{$vo.position ?? '1'}" >
-            </div>
-            <div class="col-xs-3 col-sm-3"></div>
-        </div>
-        <div class="row cl">
-            <label class="form-label col-xs-3 col-sm-3">是否显示：</label>
+            <label class="form-label col-xs-3 col-sm-3">显示在首页：</label>
             <div class="formControls col-xs-6 col-sm-6 skin-minimal">
                 <div class="radio-box">
-                    <input type="radio" name="enabled" id="enabled-0" value="Y">
-                    <label for="enabled-1">显示</label>
+                    <input type="radio" name="index_show" id="enabled-0" value="Y">
+                    <label for="enabled-1">是</label>
                 </div>
                 <div class="radio-box">
-                    <input type="radio" name="enabled" id="enabled-1" value="N">
-                    <label for="enabled-0">隐藏</label>
+                    <input type="radio" name="index_show" id="enabled-1" value="N">
+                    <label for="enabled-0">否</label>
                 </div>
+            </div>
+            <div class="col-xs-3 col-sm-3"></div>
+        </div>
+
+        <div class="row cl">
+            <label class="form-label col-xs-3 col-sm-3"><span class="c-red">*</span>排序：</label>
+            <div class="formControls col-xs-6 col-sm-2">
+                <input type="number" class="input-text" placeholder="排序" name="position" value="{$vo.position ?? '1'}"  datatype="*" nullmsg="请填写排序">
             </div>
             <div class="col-xs-3 col-sm-3"></div>
         </div>
@@ -72,7 +72,7 @@
 <script type="text/javascript" src="__LIB__/Validform/5.3.2/Validform.min.js"></script>
 <script>
     $(function () {
-        $("[name='enabled'][value='{$vo.enabled ?? 'Y'}']").prop("checked", true);
+        $("[name='index_show'][value='{$vo.index_show ?? 'Y'}']").prop("checked", true);
         $("[name='menu_id']").find("[value='{$vo.menu_id ?? ''}']").attr("selected", true);
 
         $('.skin-minimal input').iCheck({

@@ -1,0 +1,7 @@
+{extend name="template/header" /}
+{block name="content"}
+<div class="weizhi">当前位置：<a href="/">首页</a> > <b><a href="javascript:void(0)">{$title}</a></b></div>
+<div class="contents">
+    {$topic.content|htmlspecialchars_decode}
+</div>
+{/block}}
