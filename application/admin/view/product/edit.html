@@ -128,6 +128,8 @@
         var ue = UE.getEditor('editor',{
             serverUrl:'{:\\think\\Url::build("Ueditor/index")}',
             textarea : 'content',
+            initialFrameHeight:550,//设置编辑器高度
+            scaleEnabled:true,//设置不自动调整高度
             toolbars: [[
                 'fullscreen', 'source', '|', 'undo', 'redo', '|',
                 'bold', 'italic','removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
