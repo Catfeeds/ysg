@@ -15,11 +15,12 @@ class Index extends Controller
 
         $info = Db::name('menu menu')
             ->join('menu_topic topic', 'menu.id=topic.menu_id')
-            ->field(['menu.name', 'menu.pinyin', 'topic.content'])
+            ->field(['menu.name', 'menu.pinyin', 'topic.mobile_content'])
             ->where(['menu.pinyin' => $action, 'topic.enabled' => 'Y'])
             ->find();
         $this->view->assign('showTop', 1);
-        if (! empty($info)) {
+
+        if (! empty($info) && !empty($info['mobile_content'])) {
             $this->view->assign('topic', $info);
             $this->view->assign('title', $info['name']);
             return $this->view->fetch('index/topic');

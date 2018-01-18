@@ -1,6 +1,6 @@
 {extend name="template/base" /}
 {block name="content"}
-<div class="page-container" style="width:500px;">
+<div class="page-container" style="width:660px;">
 
     <div class="cl pd-5 bg-1 bk-gray">
         <span class="l">
@@ -16,6 +16,8 @@
             <th width="25"><input type="checkbox"></th>
             <th width="50">ID</th>
             <th width="250">菜单名称</th>
+            <th width="80">PC模板</th>
+            <th width="80">手机模板</th>
             <th width="160">操作</th>
         </tr>
         </thead>
@@ -25,6 +27,8 @@
             <td><input type="checkbox" name="id[]" value="{$vo.id}"></td>
             <td>{$vo.id}</td>
             <td>{$vo.menu_id ? $menusArr[$vo.menu_id] : '--'}</td>
+            <td>{$vo.content ? '<a class="btn btn-primary">是</a>' : '<a class="btn btn-warning">否</a>'}</td>
+            <td>{$vo.mobile_content ? '<a class="btn btn-primary">是</a>' : '<a class="btn btn-warning">否</a>'}</td>
             <td class="f-14">
                 {tp:menu menu='fulledit' /}
                 {tp:menu menu='mydelete' /}
