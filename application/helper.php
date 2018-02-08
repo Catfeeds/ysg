@@ -25,6 +25,12 @@ function hashids($length = null, $salt = null, $alphabet = null)
     return \Hashids\Hashids::instance($length, $salt, $alphabet);
 }
 
+if(! function_exists("array_column")){
+
+    function array_column($array, $column_name){
+        return array_map(function($element) use($column_name){return $element[$column_name];}, $array);
+    }
+}
 /**
  * 一键导出Excel 2007格式
  * @param array $header     Excel头部 ["COL1","COL2","COL3",...]
