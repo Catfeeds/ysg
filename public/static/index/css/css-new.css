@@ -317,53 +317,47 @@ a:hover{ color:#bd0000;}
 
 .product_bt ul li{ float:left; height:88px; }
 
-.product_bt ul li a{ width:90px; height:88px; display:block; float:left; text-indent:-9999px;border-left:1px solid #DAEDC8; }
+.product_bt ul li a{ width:96px; height:88px; display:block; float:left; text-indent:-9999px;border-left:1px solid #DAEDC8; }
 
-.product_bt ul li a.pic1{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -1px 0; width:90px;}
+/*.product_bt ul li a.pic1{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -1px 0; width:90px;}*/
 
-.product_bt ul li a.pic2{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -92px 0; width:98px;}
+/*.product_bt ul li a.pic2{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -92px 0; width:98px;}*/
 
-.product_bt ul li a.pic3{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -191px 0; width:100px;}
+/*.product_bt ul li a.pic3{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -191px 0; width:100px;}*/
 
-.product_bt ul li a.pic4{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -292px 0; width:97px;}
+/*.product_bt ul li a.pic4{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -292px 0; width:97px;}*/
 
-.product_bt ul li a.pic5{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -389px 0; width:98px;}
+/*.product_bt ul li a.pic5{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -389px 0; width:98px;}*/
 
-.product_bt ul li a.pic6{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -489px 0; width:96px;}
+/*.product_bt ul li a.pic6{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -489px 0; width:96px;}*/
 
-.product_bt ul li a.pic7{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -586px 0; width:95px;}
+/*.product_bt ul li a.pic7{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -586px 0; width:95px;}*/
 
-.product_bt ul li a.pic8{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -682px 0; width:97px;}
+/*.product_bt ul li a.pic8{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -682px 0; width:97px;}*/
 
-.product_bt ul li a.pic9{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -780px 0; width:96px;}
+/*.product_bt ul li a.pic9{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -780px 0; width:96px;}*/
 
-.product_bt ul li a.pic10{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -877px 0; width:92px; border-right:1px solid #DAEDC8;}
+/*.product_bt ul li a.pic10{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -877px 0; width:92px; border-right:1px solid #DAEDC8;}*/
 
+/*.product_bt ul li a.pic1:hover,.product_bt ul li.dq a.pic1{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat 0 -90px; width:90px; border-left:none; padding-left:1px;}*/
 
+/*.product_bt ul li a.pic2:hover,.product_bt ul li.dq a.pic2{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -92px -90px; width:98px;}*/
 
+/*.product_bt ul li a.pic3:hover,.product_bt ul li.dq a.pic3{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -191px -90px; width:100px;}*/
 
+/*.product_bt ul li a.pic4:hover,.product_bt ul li.dq a.pic4{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -292px -90px; width:97px;}*/
 
+/*.product_bt ul li a.pic5:hover,.product_bt ul li.dq a.pic5{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -389px -90px; width:98px;}*/
 
+/*.product_bt ul li a.pic6:hover,.product_bt ul li.dq a.pic6{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -489px -90px; width:96px;}*/
 
-.product_bt ul li a.pic1:hover,.product_bt ul li.dq a.pic1{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat 0 -90px; width:90px; border-left:none; padding-left:1px;}
+/*.product_bt ul li a.pic7:hover,.product_bt ul li.dq a.pic7{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -586px -90px; width:95px;}*/
 
-.product_bt ul li a.pic2:hover,.product_bt ul li.dq a.pic2{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -92px -90px; width:98px;}
+/*.product_bt ul li a.pic8:hover,.product_bt ul li.dq a.pic8{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -682px -90px; width:97px;}*/
 
-.product_bt ul li a.pic3:hover,.product_bt ul li.dq a.pic3{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -191px -90px; width:100px;}
+/*.product_bt ul li a.pic9:hover,.product_bt ul li.dq a.pic9{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -780px -90px; width:96px;}*/
 
-.product_bt ul li a.pic4:hover,.product_bt ul li.dq a.pic4{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -292px -90px; width:97px;}
-
-.product_bt ul li a.pic5:hover,.product_bt ul li.dq a.pic5{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -389px -90px; width:98px;}
-
-.product_bt ul li a.pic6:hover,.product_bt ul li.dq a.pic6{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -489px -90px; width:96px;}
-
-.product_bt ul li a.pic7:hover,.product_bt ul li.dq a.pic7{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -586px -90px; width:95px;}
-
-.product_bt ul li a.pic8:hover,.product_bt ul li.dq a.pic8{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -682px -90px; width:97px;}
-
-.product_bt ul li a.pic9:hover,.product_bt ul li.dq a.pic9{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -780px -90px; width:96px;}
-
-.product_bt ul li a.pic10:hover,.product_bt ul li.dq a.pic10{ background:url("../images/pp_nav.jpg")/*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*/ no-repeat -877px -90px; width:93px; border-right:none;}
+/*.product_bt ul li a.pic10:hover,.product_bt ul li.dq a.pic10{ background:url("../images/pp_nav.jpg")!*tpa=http://www.ysg.cn/templets/ysg/style/images/pp_nav.jpg*! no-repeat -877px -90px; width:93px; border-right:none;}*/
 
 .product_all{ height:26px; padding:12px 0;}
 
