@@ -27,8 +27,23 @@ function hashids($length = null, $salt = null, $alphabet = null)
 
 if(! function_exists("array_column")){
 
-    function array_column($array, $column_name){
-        return array_map(function($element) use($column_name){return $element[$column_name];}, $array);
+    function array_column($array, $column_name, $key_name = ''){
+        $result = [];
+        foreach ($array as $item) {
+            if ($key_name) {
+                $result[$item[$key_name]] = $item[$column_name];
+            } else {
+                $result[] = $item[$column_name];
+            }
+        }
+        return $result;
+        /*return array_map(function($element) use($column_name, $key_name){
+            if ($key_name) {
+                return [$key_name => $element[$column_name]];
+            } else {
+                return $element[$column_name];
+            }
+            }, $array);*/
     }
 }
 /**
