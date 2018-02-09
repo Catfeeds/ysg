@@ -179,6 +179,19 @@ trait Controller
         return $this->updateField($this->fieldIsDelete, 1, "移动到回收站成功");
     }
 
+    public function mydelete()
+    {
+        $model = $this->getModel();
+        $pk = $model->getPk();
+        $ids = $this->request->param($pk);
+        $where[$pk] = ["in", $ids];
+        if (false === $model->where($where)->delete()) {
+            return ajax_return_adv_error($model->getError());
+        }
+
+        return ajax_return_adv("删除成功");
+    }
+
     /**
      * 从回收站恢复
      */
