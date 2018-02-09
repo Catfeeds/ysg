@@ -150,6 +150,7 @@ class Tp extends Taglib
                     break;
                 case 'mydelete':// 新增
                     $title = isset($titleArr[$k]) && $titleArr[$k] ? $titleArr[$k] : '删除';
+                    $url = substr($url, 0, 2) == 'my' ? substr($url, 2) : $url;
                     list($url, $param) = $this->parseUrl($url);
                     $parseStr .= ' <a href="javascript:;" onclick="del_forever(this,\'{$vo.id}\',\'<?php echo \think\Url::build(\'' . $url . '\', [' . $param . ']); ?>\')" class="btn btn-danger">' . $title . '</a>';
                     break;
