@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-\think\Route::domain('m.shuaishuaimai.com','mobile');
+\think\Route::domain(\think\Config::get('mobile_domain'),'mobile');
 return [
     '__pattern__' => [
         'name' => '\w+',
