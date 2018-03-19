@@ -228,4 +228,5 @@ return [
         'var_page'  => 'p',
         'list_rows' => 20,
     ],
+    'mobile_domain' => ''
 ];
