@@ -17,4 +17,20 @@ class JoinerStyle extends Controller
             $map['title'] = ["like", "%" . $this->request->param("title") . "%"];
         }
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('JoinerStyle', null);
+        cache('mobile_JoinerStyle', null);
+    }
 }

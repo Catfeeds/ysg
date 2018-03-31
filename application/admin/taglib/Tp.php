@@ -164,13 +164,13 @@ class Tp extends Taglib
                     $title = isset($titleArr[$k]) && $titleArr[$k] ? $titleArr[$k] : '编辑';
                     $url = substr($url, 0, 4) == 'full' ? substr($url, 4) : $url;
                     list($url, $param) = $this->parseUrl($url, 'id=$vo["id"]');
-                    $parseStr .= '<a href="javascript:;" onclick="full_page(\'' . $title . '\',\'<?php echo \think\Url::build(\'' . $url . '\', [' . $param . ']); ?>\')" class="btn btn-secondary radius mr-5">' . $title . '</a>';
+                    $parseStr .= '<a href="javascript:;" onclick="layer_open(\'' . $title . '\',\'<?php echo \think\Url::build(\'' . $url . '\', [' . $param . ']); ?>\')" class="btn btn-secondary radius mr-5">' . $title . '</a>';
                     break;
                 case 'fulladd': // 新增
                     $title = isset($titleArr[$k]) && $titleArr[$k] ? $titleArr[$k] : '新增';
                     $url = substr($url, 0, 4) == 'full' ? substr($url, 4) : $url;
                     list($url, $param) = $this->parseUrl($url);
-                    $parseStr .= '<a class="btn btn-primary radius mr-5" href="javascript:;" onclick="full_page(\'' . $title . '\',\'<?php echo \think\Url::build(\'' . $url . '\', [' . $param . ']); ?>\')"><i class="Hui-iconfont">&#xe600;</i> ' . $title . '</a>';
+                    $parseStr .= '<a class="btn btn-primary radius mr-5" href="javascript:;" onclick="layer_open(\'' . $title . '\',\'<?php echo \think\Url::build(\'' . $url . '\', [' . $param . ']); ?>\')"><i class="Hui-iconfont">&#xe600;</i> ' . $title . '</a>';
                     break;
                 default:
                     // 默认为小菜单

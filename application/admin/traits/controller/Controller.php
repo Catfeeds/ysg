@@ -98,7 +98,11 @@ trait Controller
                     return ajax_return_adv_error($e->getMessage());
                 }
             }
-
+            // 后置方法
+            $afterAction = "after" . $this->request->action();
+            if (method_exists($this, $afterAction)) {
+                $this->$afterAction();
+            }
             return ajax_return_adv('添加成功');
         } else {
             // 添加
@@ -152,7 +156,11 @@ trait Controller
                     return ajax_return_adv_error($e->getMessage());
                 }
             }
-
+            // 后置方法
+            $afterAction = "after" . $this->request->action();
+            if (method_exists($this, $afterAction)) {
+                $this->$afterAction();
+            }
             return ajax_return_adv("编辑成功");
         } else {
             // 编辑

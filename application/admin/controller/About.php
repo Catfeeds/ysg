@@ -13,5 +13,5 @@ class About extends Controller
 
     protected static $isdelete = false;
 
-    
+
 }

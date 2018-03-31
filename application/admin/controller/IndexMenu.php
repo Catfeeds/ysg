@@ -20,4 +20,20 @@ class IndexMenu extends Controller
         $this->view->assign('menus', $menus);
         $this->view->assign('menusArr', $menusArr);
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('indexMenu', null);
+        cache('mobile_indexMenu', null);
+    }
 }

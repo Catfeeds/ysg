@@ -11,5 +11,19 @@ class Banner extends Controller
     // 方法黑名单
     protected static $blacklist = [];
 
-    
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('indexBanner', null);
+        cache('mobile_indexBanner', null);
+    }
 }

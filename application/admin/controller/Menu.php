@@ -27,4 +27,22 @@ class Menu extends Controller
             $map['name'] = ["like", "%" . $this->request->param("name") . "%"];
         }
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('topMenus', null);
+        cache('mobile_topMenus', null);
+        cache('bottomMenu', null);
+        cache('investMenu', null);
+    }
 }

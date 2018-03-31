@@ -80,7 +80,8 @@ class Index extends Controller
                 [
                     'username' => $username,
                     'telephone' => $phone,
-                    'content' => $content
+                    'content' => $content,
+                    'create_time' => time()
                 ]
             );
 

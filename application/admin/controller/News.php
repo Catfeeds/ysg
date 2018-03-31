@@ -48,4 +48,21 @@ class News extends Controller
         }
         parent::edit();*/
     }
+
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('indexNews', null);
+        cache('mobile_indexNews', null);
+    }
 }
