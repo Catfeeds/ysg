@@ -17,4 +17,21 @@ class JoinerNews extends Controller
             $map['title'] = ["like", "%" . $this->request->param("title") . "%"];
         }
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('JoinerNews', null);
+        cache('mobile_JoinerNews', null);
+        cache('mobile_indexJoiner', null);
+    }
 }

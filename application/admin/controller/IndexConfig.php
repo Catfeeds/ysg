@@ -16,4 +16,20 @@ class IndexConfig extends Controller
     protected static $blacklist = [];
 
     protected static $isdelete = false;
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('indexConfig', null);
+        cache('mobile_indexConfig', null);
+    }
 }

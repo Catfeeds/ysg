@@ -19,4 +19,19 @@ class CompanyBrandImage extends Controller
         $this->view->assign('brands', $brand);
         $this->view->assign('brandsArr', $brandArr);
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('companyBrandImage', null);
+    }
 }

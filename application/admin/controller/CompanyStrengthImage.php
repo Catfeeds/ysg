@@ -19,4 +19,19 @@ class CompanyStrengthImage extends Controller
         $this->view->assign('category', $menus);
         $this->view->assign('categoryArr', $menusArr);
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('companyStrengthImages', null);
+    }
 }

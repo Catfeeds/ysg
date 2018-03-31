@@ -27,4 +27,20 @@ class InvestNews extends Controller
             $map['title'] = ["like", "%" . $this->request->param("title") . "%"];
         }
     }
+
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('invests', null);
+        cache('mobile_indexInvest', null);
+    }
 }

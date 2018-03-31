@@ -11,5 +11,18 @@ class Video extends Controller
     // 方法黑名单
     protected static $blacklist = [];
 
-    
+    protected function afterAdd()
+    {
+        $this->clearCache();
+    }
+
+    public function afterEdit()
+    {
+        $this->clearCache();
+    }
+
+    protected function clearCache()
+    {
+        cache('indexVideo', null);
+    }
 }

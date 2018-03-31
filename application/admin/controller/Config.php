@@ -13,4 +13,15 @@ class Config extends Controller
 
     protected static $isdelete = false;
 
+    protected function afterAdd()
+    {
+        // todo
+    }
+
+    public function afterEdit()
+    {
+        cache('siteConfig', null);
+        cache('mobile_siteConfig', null);
+    }
+
 }
